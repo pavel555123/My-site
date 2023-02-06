@@ -7,7 +7,7 @@ interface ThemeProviderProps {
     children?: React.ReactNode
 }
 
-const ThemeProvider = ({children}: ThemeProviderProps) => {
+export const ThemeProvider = ({children}: ThemeProviderProps) => {
     const [theme, setTheme] = useState<Theme>(defaultTheme);
 
     const defaultProps = useMemo(() => ({
@@ -22,4 +22,4 @@ const ThemeProvider = ({children}: ThemeProviderProps) => {
     );
 };
 
-export default ThemeProvider;
+
