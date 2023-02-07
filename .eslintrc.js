@@ -5,16 +5,17 @@ module.exports = {
     },
     extends: [
         'plugin:react/recommended',
-        'standard-with-typescript'
+        'standard-with-typescript',
+        'plugin:i18next/recommended'
     ],
-    overrides: [],
     parserOptions: {
         project: 'tsconfig.json',
         tsconfigRootDir: __dirname,
         sourceType: 'module'
     },
     plugins: [
-        'react'
+        'react',
+        'i18next'
     ],
     rules: {
         indent: 'off',
