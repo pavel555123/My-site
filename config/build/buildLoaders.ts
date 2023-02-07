@@ -1,9 +1,8 @@
-import webpack from "webpack";
-import MiniCssExtractPlugin from "mini-css-extract-plugin";
-import {BuildOptions} from "./types/config";
+import type webpack from 'webpack'
+import MiniCssExtractPlugin from 'mini-css-extract-plugin'
+import { type BuildOptions } from './types/config'
 
-export function buildLoaders({isDev}: BuildOptions): webpack.RuleSetRule[] {
-
+export function buildLoaders ({ isDev }: BuildOptions): webpack.RuleSetRule[] {
     const fileLoader = {
         test: /\.(png|jpe?g|gif|woff|woff2)$/i,
         use: [
@@ -22,18 +21,18 @@ export function buildLoaders({isDev}: BuildOptions): webpack.RuleSetRule[] {
         test: /\.(js|jsx|ts|tsx)$/,
         exclude: /node_modules/,
         use: {
-            loader: "babel-loader",
+            loader: 'babel-loader',
             options: {
                 presets: ['@babel/preset-env'],
-                "plugins": [
+                plugins: [
                     [
-                        "i18next-extract",
+                        'i18next-extract',
                         {
-                            "locales": [
-                                "ru",
-                                "en"
+                            locales: [
+                                'ru',
+                                'en'
                             ],
-                            "KeyAsDefaultValue": true
+                            KeyAsDefaultValue: true
                         }
                     ]
                 ]
@@ -56,14 +55,14 @@ export function buildLoaders({isDev}: BuildOptions): webpack.RuleSetRule[] {
                     }
                 }
             },
-            "sass-loader",
+            'sass-loader'
         ]
     }
 
     const typescriptLoader = {
         test: /\.tsx?$/,
         use: 'ts-loader',
-        exclude: /node_modules/,
+        exclude: /node_modules/
     }
 
     return [
@@ -71,6 +70,6 @@ export function buildLoaders({isDev}: BuildOptions): webpack.RuleSetRule[] {
         svgLoader,
         babelLoader,
         typescriptLoader,
-        cssLoader,
+        cssLoader
     ]
 }
