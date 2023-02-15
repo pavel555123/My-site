@@ -25,6 +25,8 @@ module.exports = {
         '@typescript-eslint/explicit-function-return-type': 'off',
         '@typescript-eslint/strict-boolean-expressions': 'off',
         '@typescript-eslint/prefer-nullish-coalescing': 'off',
-        '@typescript-eslint/no-floating-promises': 'off'
+        '@typescript-eslint/no-floating-promises': 'off',
+        '@typescript-eslint/prefer-includes': 'off',
+        '@typescript-eslint/consistent-type-assertions': 'off'
     }
 }
