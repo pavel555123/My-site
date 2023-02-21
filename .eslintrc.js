@@ -15,12 +15,15 @@ module.exports = {
     },
     plugins: [
         'react',
-        'i18next'
+        'i18next',
+        'react-hooks'
     ],
     rules: {
         indent: 'off',
         '@typescript-eslint/indent': [2, 4],
         '@typescript-eslint/ban-ts-comment': 'warn',
+        'react-hooks/rules-of-hooks': 'error',
+        'react-hooks/exhaustive-deps': 'error',
         'react/react-in-jsx-scope': 'off',
         '@typescript-eslint/explicit-function-return-type': 'off',
         '@typescript-eslint/strict-boolean-expressions': 'off',
