@@ -6,10 +6,10 @@ on:
     branches: [ master ]
 jobs:
   pipeline:
-    runs-on: windows-2019
+    runs-on: windows-latest
     strategy:
       matrix:
-        node_version: [ 16.x ]
+        node_version: [ 18.x ]
     steps:
       - uses: actions/checkout@v2
       - name: Staring Node.js ${{ matrix.node-version }}
@@ -33,7 +33,7 @@ jobs:
       - name: build storybook
         run: npm run storybook:build
         if: always()
-#      - name: screenshot testing
-#        run: npm run test:ui:ci
+      - name: screenshot testing
+        run: npm run test:ui:ci
 
 
