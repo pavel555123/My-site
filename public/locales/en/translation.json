@@ -12,5 +12,7 @@
   "Короткий язык": "en",
   "Войти": "Log in",
   "Добавить": "Increment",
-  "Отнять": "Decrement"
+  "Отнять": "Decrement",
+  "Имя": "Name",
+  "Пароль": "Password"
 }
