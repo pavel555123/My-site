@@ -11,8 +11,11 @@
   "Язык": "Language",
   "Короткий язык": "en",
   "Войти": "Log in",
+  "Выйти": "Exit",
   "Добавить": "Increment",
   "Отнять": "Decrement",
   "Имя": "Name",
-  "Пароль": "Password"
+  "Пароль": "Password",
+  "Форма авторизации": "Authorization form",
+  "Неверный логин или пароль": "Incorrect login or password"
 }

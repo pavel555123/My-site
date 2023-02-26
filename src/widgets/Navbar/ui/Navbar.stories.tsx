@@ -4,6 +4,7 @@ import { type ComponentMeta, type ComponentStory } from '@storybook/react'
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator'
 import { Theme } from 'app/providers/ThemeProvider'
 import { Navbar } from './Navbar'
+import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator'
 
 export default {
     title: 'widgets/Navbar',
@@ -20,9 +21,22 @@ Light.args = {
 
 }
 Light.decorators = [ThemeDecorator(Theme.LIGHT)]
+Light.decorators = [StoreDecorator({
+    loginForm: { username: '123', password: 'aaa' }
+})]
 
 export const Dark = Template.bind({})
 Dark.args = {
 
 }
-Dark.decorators = [ThemeDecorator(Theme.DARK)]
+Dark.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({
+    loginForm: { username: '123', password: 'aaa' }
+})]
+
+export const AuthNavbar = Template.bind({})
+AuthNavbar.args = {
+
+}
+AuthNavbar.decorators = [StoreDecorator({
+    user: { authData: {} }
+})]
