@@ -30,6 +30,7 @@ module.exports = {
         '@typescript-eslint/prefer-nullish-coalescing': 'off',
         '@typescript-eslint/no-floating-promises': 'off',
         '@typescript-eslint/prefer-includes': 'off',
-        '@typescript-eslint/consistent-type-assertions': 'off'
+        '@typescript-eslint/consistent-type-assertions': 'off',
+        '@typescript-eslint/no-dynamic-delete': 'off'
     }
 }
