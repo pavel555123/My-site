@@ -30,5 +30,14 @@
       "password": "123"
     }
   ],
-  "profile": { "name": "typicode" }
+  "profile": {
+    "first": "Pavel",
+    "lastname": "Nikiforov",
+    "age": "20",
+    "currency": "RUB",
+    "country": "Russia",
+    "city": "Krasnoyarsk",
+    "username": "admin",
+    "avatar": "https://mobimg.b-cdn.net/v3/fetch/80/807548893d3c824877406205a7aed13c.jpeg"
+  }
 }
