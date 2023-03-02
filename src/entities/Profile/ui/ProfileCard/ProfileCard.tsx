@@ -28,12 +28,12 @@ export const ProfileCard = ({ className }: ProfileCardProps) => {
             <div className={cls.data}>
                 <Input
                     value={data?.first}
-                    placeholder={t('Ваше имя')}
+                    placeholder={t('Имя')}
                     className={cls.input}
                 />
                 <Input
                     value={data?.lastname}
-                    placeholder={t('Ваша фамилия')}
+                    placeholder={t('Фамилия')}
                     className={cls.input}
                 />
             </div>
