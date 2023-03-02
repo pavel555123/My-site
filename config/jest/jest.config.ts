@@ -11,7 +11,8 @@ export default {
     // cacheDirectory: "C:\\Users\\Наталья\\AppData\\Local\\Temp\\jest",
 
     globals: {
-        IS_DEV: true
+        IS_DEV: true,
+        API: ''
     },
     clearMocks: true,
     testEnvironment: 'jsdom',

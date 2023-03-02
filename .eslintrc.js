@@ -22,6 +22,7 @@ module.exports = {
         indent: 'off',
         '@typescript-eslint/indent': [2, 4],
         '@typescript-eslint/ban-ts-comment': 'warn',
+        '@typescript-eslint/no-unnecessary-type-assertion': 'off',
         'react-hooks/rules-of-hooks': 'error',
         'react-hooks/exhaustive-deps': 'error',
         'react/react-in-jsx-scope': 'off',
@@ -33,6 +34,7 @@ module.exports = {
         '@typescript-eslint/consistent-type-assertions': 'off',
         '@typescript-eslint/no-dynamic-delete': 'off',
         'react/display-name': 'off',
-        '@typescript-eslint/no-misused-promises': 'off'
+        '@typescript-eslint/no-misused-promises': 'off',
+        '@typescript-eslint/no-non-null-assertion': 'off'
     }
 }

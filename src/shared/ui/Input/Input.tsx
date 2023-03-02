@@ -1,13 +1,15 @@
 import { classNames } from 'shared/lib/classNames/classNames'
 import cls from './Input.module.scss'
 import { type InputHTMLAttributes, memo } from 'react'
+import { type DefaultTFuncReturn } from 'i18next'
 
-type HTMLInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange'>
+type HTMLInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange' | 'placeholder'>
 
 interface InputProps extends HTMLInputProps {
     className?: string
     value?: string
     onChange?: (value: string) => void
+    placeholder?: string | DefaultTFuncReturn
 }
 
 export const Input = memo((props: InputProps) => {

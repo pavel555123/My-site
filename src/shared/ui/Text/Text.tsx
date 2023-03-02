@@ -1,6 +1,7 @@
 import { classNames } from 'shared/lib/classNames/classNames'
 import cls from './Text.module.scss'
 import { memo } from 'react'
+import { type DefaultTFuncReturn } from 'i18next'
 
 export enum TextTheme {
     PRIMARY = 'primary',
@@ -9,8 +10,8 @@ export enum TextTheme {
 
 interface TextProps {
     className?: string
-    title?: string
-    text?: string
+    title?: string | DefaultTFuncReturn
+    text?: string | DefaultTFuncReturn
     theme?: TextTheme
 }
 
