@@ -1,15 +1,16 @@
-import { classNames } from 'shared/lib/classNames/classNames'
+import { classNames, type Mods } from 'shared/lib/classNames/classNames'
 import cls from './Input.module.scss'
 import { type InputHTMLAttributes, memo } from 'react'
 import { type DefaultTFuncReturn } from 'i18next'
 
-type HTMLInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange' | 'placeholder'>
+type HTMLInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange' | 'placeholder' | 'readOnly'>
 
 interface InputProps extends HTMLInputProps {
     className?: string
-    value?: string
+    value?: string | number
     onChange?: (value: string) => void
     placeholder?: string | DefaultTFuncReturn
+    readonly?: boolean
 }
 
 export const Input = memo((props: InputProps) => {
@@ -19,6 +20,7 @@ export const Input = memo((props: InputProps) => {
         onChange,
         type = 'text',
         placeholder,
+        readonly,
         ...otherProps
     } = props
 
@@ -26,19 +28,24 @@ export const Input = memo((props: InputProps) => {
         onChange?.(e.target.value)
     }
 
+    const mods: Mods = {
+        [cls.readonly]: readonly
+    }
+
     return (
         <div
-            className={classNames(cls.InputWrapper, {}, [className])}>
+            className={classNames(cls.InputWrapper, mods, [className])}>
             {placeholder && (
                 <div className={cls.placeholder}>
                     {placeholder}
                 </div>
             )}
             <input
+                className={cls.input}
                 type={type}
                 value = {value}
                 onChange={onChangeHandler}
-                className={cls.input}
+                readOnly={readonly}
                 {...otherProps}
             />
         </div>

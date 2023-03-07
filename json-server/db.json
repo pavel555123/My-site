@@ -33,7 +33,7 @@
   "profile": {
     "first": "Pavel",
     "lastname": "Nikiforov",
-    "age": "20",
+    "age": 20,
     "currency": "RUB",
     "country": "Russia",
     "city": "Krasnoyarsk",
