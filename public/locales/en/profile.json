@@ -10,5 +10,10 @@
   "Укажите страну": "Country",
   "Укажите валюту": "Currency",
   "Отменить": "Cancel",
-  "Сохранить": "Save"
+  "Сохранить": "Save",
+  "Серверная ошибка": "Server error",
+  "Имя и фамилия обязательны": "Incorrect Name or Surname",
+  "Данные не указаны": "No Data",
+  "Некорректный возраст": "Incorrect age",
+  "Некорректная страна": "Incorrect country"
 }
