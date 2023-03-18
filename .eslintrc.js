@@ -35,6 +35,7 @@ module.exports = {
         '@typescript-eslint/no-dynamic-delete': 'off',
         'react/display-name': 'off',
         '@typescript-eslint/no-misused-promises': 'off',
-        '@typescript-eslint/no-non-null-assertion': 'off'
+        '@typescript-eslint/no-non-null-assertion': 'off',
+        '@typescript-eslint/restrict-template-expressions': 'off'
     }
 }

@@ -6,12 +6,14 @@ import { type AnyAction, type CombinedState, type Reducer, type ReducersMapObjec
 import { type ToolkitStore } from '@reduxjs/toolkit/dist/configureStore'
 import { type AxiosInstance } from 'axios'
 import { type NavigateOptions, type To } from 'react-router-dom'
+import { type ArticleDetailsSchema } from 'entities/Article'
 
 export interface StateSchema {
     counter: CounterScheme
     user: UserScheme
     loginForm?: LoginSchema
     profile?: ProfileSchema
+    articleDetails?: ArticleDetailsSchema
 }
 
 export type StateSchemaKey = keyof StateSchema
