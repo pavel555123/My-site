@@ -6,6 +6,7 @@ import { ValidateProfileError } from 'entities/Profile'
 
 describe('updateProfileData.test', () => {
     const data = {
+        id: '1',
         first: 'Pavel',
         lastname: 'Nikiforov',
         age: 20,

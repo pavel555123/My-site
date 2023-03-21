@@ -19,7 +19,9 @@
       "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
       "views": 1022,
       "createdAt": "26.02.2022",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -100,6 +102,30 @@
       "text": "some comment 3",
       "articleId": "1",
       "userId": "1"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "31234124",
+      "id": "NDswGLF"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "123",
+      "id": "VXp8DtF"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "4441",
+      "id": "YBeZfHG"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "333",
+      "id": "iJlP4AD"
     }
   ],
   "users": [
@@ -115,17 +141,31 @@
       "username": "user",
       "password": "123",
       "role": "USER",
-      "avatar": "https://avatars.dzeninfra.ru/get-zen_doc/2810999/pub_5ee05b76e80c771bfd15cff6_5ee05cb934bde9137b294a1e/scale_1200"
+      "avatar": "https://hsto.org/r/w1560/getpro/habr/post_images/d56/a02/ffc/d56a02ffc62949b42904ca00c63d8cc1.png"
     }
   ],
-  "profile": {
-    "first": "jgh",
-    "lastname": "asf",
-    "age": 465,
-    "currency": "RUB",
-    "country": "Belarus",
-    "city": "Moscow",
-    "username": "admin213",
-    "avatar": "https://avatars.dzeninfra.ru/get-zen_doc/2810999/pub_5ee05b76e80c771bfd15cff6_5ee05cb934bde9137b294a1e/scale_1200"
-  }
+  "profile": [
+    {
+      "id": "1",
+      "first": "jgh",
+      "lastname": "asf",
+      "age": 43,
+      "currency": "RUB",
+      "country": "Belarus",
+      "city": "Moscow",
+      "username": "admin213",
+      "avatar": "https://avatars.dzeninfra.ru/get-zen_doc/2810999/pub_5ee05b76e80c771bfd15cff6_5ee05cb934bde9137b294a1e/scale_1200"
+    },
+    {
+      "id": "2",
+      "first": "hehehhe",
+      "lastname": "asf",
+      "age": 47,
+      "currency": "RUB",
+      "country": "Russia",
+      "city": "Moscow",
+      "username": "Pavel",
+      "avatar": "https://hsto.org/r/w1560/getpro/habr/post_images/d56/a02/ffc/d56a02ffc62949b42904ca00c63d8cc1.png"
+    }
+  ]
 }
