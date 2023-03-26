@@ -3,17 +3,17 @@ import { TestAsyncThunk } from 'shared/lib/tests/TestAsyncThunk/TestAsyncThunk'
 import { Currency } from 'entities/Currency'
 import { Country } from 'entities/Country'
 
-describe('fetchProfileData.test', () => {
-    const data = {
-        first: 'Pavel',
-        lastname: 'Nikiforov',
-        age: 20,
-        city: 'Krasnoyarsk',
-        username: 'admin',
-        currency: Currency.RUB,
-        country: Country.Russia
-    }
+const data = {
+    first: 'Pavel',
+    lastname: 'Nikiforov',
+    age: 20,
+    city: 'Krasnoyarsk',
+    username: 'admin',
+    currency: Currency.RUB,
+    country: Country.Russia
+}
 
+describe('fetchProfileData.test', () => {
     test('success', async () => {
         const thunk = new TestAsyncThunk(fetchProfileData)
         thunk.api.get.mockReturnValue(Promise.resolve({ data }))

@@ -19,6 +19,7 @@ import { AddCommentForm } from 'features/AddCommentForm'
 import { addCommentForArticle } from '../../model/services/addCommentForArticle/addCommentForArticle'
 import { Button } from 'shared/ui/Button/Button'
 import { RoutePath } from 'shared/config/routeConfig/routeConfig'
+import { Page } from 'shared/ui/Page/Page'
 
 interface ArticleDetailsPageProps {
     className?: string
@@ -50,15 +51,15 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
 
     if (!id) {
         return (
-            <div className={classNames(cls.ArticleDetailsPage, {}, [className])}>
+            <Page className={classNames(cls.ArticleDetailsPage, {}, [className])}>
                 {t('Статья не найдена')}
-            </div>
+            </Page>
         )
     }
 
     return (
         <DynamicModuleLoader reducers={reducers}>
-            <div className={classNames(cls.ArticleDetailsPage, {}, [className])}>
+            <Page className={classNames(cls.ArticleDetailsPage, {}, [className])}>
                 <Button onClick={onBackToList}>
                     {t('Назад к списку')}
                 </Button>
@@ -66,7 +67,7 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
                 <Text className={cls.commentTitle} title={t('Комментарии')}/>
                 <AddCommentForm onSendComment={onSendComment}/>
                 <CommentList comments={comments} isLoading={commentsIsLoading}/>
-            </div>
+            </Page>
         </DynamicModuleLoader>
     )
 }
