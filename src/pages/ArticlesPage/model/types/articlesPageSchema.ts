@@ -8,4 +8,5 @@ export interface ArticlesPageSchema extends EntityState<Article> {
     hasMore: boolean
     isLoading?: boolean
     error?: string
+    _inited: boolean
 }
