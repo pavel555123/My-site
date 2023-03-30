@@ -6,7 +6,7 @@ import { type AnyAction, type CombinedState, type Reducer, type ReducersMapObjec
 import { type ToolkitStore } from '@reduxjs/toolkit/dist/configureStore'
 import { type AxiosInstance } from 'axios'
 import { type ArticleDetailsSchema } from 'entities/Article'
-import { type ArticleDetailsCommentsSchema } from 'pages/ArticleDetailsPage'
+import { type ArticleDetailsPageSchema } from 'pages/ArticleDetailsPage'
 import { type AddCommentFormSchema } from 'features/AddCommentForm'
 import { type ArticlesPageSchema } from 'pages/ArticlesPage'
 import { type ScrollSaveSchema } from 'features/ScrollSave'
@@ -18,9 +18,9 @@ export interface StateSchema {
     loginForm?: LoginSchema
     profile?: ProfileSchema
     articleDetails?: ArticleDetailsSchema
-    articleDetailsComments?: ArticleDetailsCommentsSchema
     addCommentForm?: AddCommentFormSchema
     articlesPage?: ArticlesPageSchema
+    articleDetailsPage?: ArticleDetailsPageSchema
 }
 
 export type StateSchemaKey = keyof StateSchema
