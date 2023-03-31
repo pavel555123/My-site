@@ -5,6 +5,7 @@ import { type DefaultTFuncReturn } from 'i18next'
 
 export enum TextTheme {
     PRIMARY = 'primary',
+    INVERTED = 'inverted',
     ERROR = 'error'
 }
 
