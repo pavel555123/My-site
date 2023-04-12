@@ -16,7 +16,8 @@ module.exports = {
     plugins: [
         'react',
         'i18next',
-        'react-hooks'
+        'react-hooks',
+        'test-imports-plugin'
     ],
     rules: {
         indent: 'off',
@@ -36,6 +37,7 @@ module.exports = {
         'react/display-name': 'off',
         '@typescript-eslint/no-misused-promises': 'off',
         '@typescript-eslint/no-non-null-assertion': 'off',
-        '@typescript-eslint/restrict-template-expressions': 'off'
+        '@typescript-eslint/restrict-template-expressions': 'off',
+        'test-imports-plugin/path-checker': 'error'
     }
 }

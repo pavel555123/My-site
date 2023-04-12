@@ -3,17 +3,17 @@ import { type ComponentMeta, type ComponentStory } from '@storybook/react'
 
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator'
 import { Theme } from 'app/providers/ThemeProvider'
-import { PageLoader } from './PageLoader'
+import { ThemeSwitcher } from './ThemeSwitcher'
 
 export default {
-    title: 'shared/PageLoader',
-    component: PageLoader,
+    title: 'widgets/ThemeSwitcher',
+    component: ThemeSwitcher,
     argTypes: {
         backgroundColor: { control: 'color' }
     }
-} as ComponentMeta<typeof PageLoader>
+} as ComponentMeta<typeof ThemeSwitcher>
 
-const Template: ComponentStory<typeof PageLoader> = (args) => <PageLoader {...args} />
+const Template: ComponentStory<typeof ThemeSwitcher> = (args) => <ThemeSwitcher {...args} />
 
 export const Normal = Template.bind({})
 Normal.args = {
