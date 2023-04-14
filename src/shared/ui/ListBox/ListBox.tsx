@@ -4,6 +4,7 @@ import cls from './ListBox.module.scss'
 import { classNames } from 'shared/lib/classNames/classNames'
 import { Button } from '../Button/Button'
 import { HStack } from '../Stack/HStack/HStack'
+import { type DropdownDirection } from 'shared/types/ui'
 
 export interface ListBoxItem {
     value: string
@@ -22,11 +23,11 @@ interface ListBoxProps {
     label?: string
 }
 
-type DropdownDirection = 'top' | 'bottom'
-
 const mapDirectionClass: Record<DropdownDirection, string> = {
-    bottom: cls.optionsBottom,
-    top: cls.optionsTop
+    'bottom right': cls.optionsBottomRight,
+    'bottom left': cls.optionsBottomLeft,
+    'top right': cls.optionsTopRight,
+    'top left': cls.optionsTopLeft
 }
 
 export function ListBox (props: ListBoxProps) {
@@ -37,7 +38,7 @@ export function ListBox (props: ListBoxProps) {
         defaultValue,
         onChange,
         readonly,
-        direction = 'bottom',
+        direction = 'bottom right',
         label
     } = props
 
@@ -53,7 +54,7 @@ export function ListBox (props: ListBoxProps) {
                 onChange={onChange}
                 disabled={readonly}
             >
-                <HListBox.Button className={cls.trigger}>
+                <HListBox.Button className={classNames(cls.trigger, { [cls.hidden]: readonly })}>
                     <Button disabled={readonly}>
                         {value ?? defaultValue}
                     </Button>
