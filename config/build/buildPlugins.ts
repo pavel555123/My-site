@@ -31,7 +31,7 @@ export function buildPlugins ({ paths, isDev, apiUrl, project }: BuildOptions): 
     if (isDev) {
         plugins.push(new ReactRefreshWebpackPlugin())
         plugins.push(new BundleAnalyzerPlugin({
-            openAnalyzer: false
+            openAnalyzer: true
         }))
     }
 
