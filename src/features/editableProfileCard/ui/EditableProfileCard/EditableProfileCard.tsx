@@ -20,6 +20,7 @@ import {
     EditableProfileCardHeader
 } from '../EditableProfileCardHeader/EditableProfileCardHeader'
 import { VStack } from 'shared/ui/Stack'
+import { classNames } from 'shared/lib/classNames/classNames'
 
 const reducers: ReducerList = {
     profile: profileReducer
@@ -89,7 +90,7 @@ export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
 
     return (
         <DynamicModuleLoader reducers={reducers}>
-            <VStack gap='8' max className={className}>
+            <VStack gap='8' max className={classNames('', {}, [className])}>
                 <EditableProfileCardHeader/>
                 {validateErrors?.length && validateErrors.map((err) => (
                     <Text
