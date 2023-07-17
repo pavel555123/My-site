@@ -10,6 +10,8 @@ import { useSelector } from 'react-redux'
 import { type StateSchema } from 'app/providers/StoreProvider'
 import { useThrottle } from 'shared/lib/hooks/useThrottle/useThrottle'
 
+export const PAGE_ID = 'PAGE_ID'
+
 interface PageProps {
     className?: string
     children: ReactNode
@@ -48,6 +50,7 @@ export const Page = memo(({ className, children, onScrollEnd }: PageProps) => {
             ref={wrapperRef}
             className={classNames(cls.Page, {}, [className])}
             onScroll={onScroll}
+            id={PAGE_ID}
         >
             {children}
             {onScrollEnd ? <div className={cls.trigger} ref={triggerRef}/> : null}
