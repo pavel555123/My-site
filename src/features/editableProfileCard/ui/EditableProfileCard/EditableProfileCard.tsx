@@ -14,13 +14,13 @@ import { getProfileReadonly } from '../../model/selectors/getProfileReadonly/get
 import { getProfileValidateErrors } from '../../model/selectors/getProfileValidateErrors/getProfileValidateErrors'
 import { fetchProfileData } from '../../model/services/fetchProfileData/fetchProfileData'
 import { profileActions, profileReducer } from '../../model/slice/profileSlice'
-import { ValidateProfileError } from '../../model/types/editableProfileCardSchema'
 import { DynamicModuleLoader, type ReducerList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
 import {
     EditableProfileCardHeader
 } from '../EditableProfileCardHeader/EditableProfileCardHeader'
 import { VStack } from 'shared/ui/Stack'
 import { classNames } from 'shared/lib/classNames/classNames'
+import { ValidateProfileError } from '../../model/consts/consts'
 
 const reducers: ReducerList = {
     profile: profileReducer
