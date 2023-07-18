@@ -34,7 +34,7 @@ export default ({ config }: { config: webpack.Configuration }) => {
 
     config.plugins!.push(new DefinePlugin({
         IS_DEV: JSON.stringify(true),
-        API: JSON.stringify(''),
+        API: JSON.stringify('http://testapi.ru'),
         PROJECT: JSON.stringify('storybook')
     }))
 
