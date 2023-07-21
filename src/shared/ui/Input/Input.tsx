@@ -1,4 +1,4 @@
-import { classNames, type Mods } from 'shared/lib/classNames/classNames'
+import { classNames, type Mods } from '@/shared/lib/classNames/classNames'
 import cls from './Input.module.scss'
 import { type InputHTMLAttributes, memo } from 'react'
 import { type DefaultTFuncReturn } from 'i18next'

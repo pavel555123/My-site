@@ -1,9 +1,9 @@
-import { classNames } from 'shared/lib/classNames/classNames'
+import { classNames } from '@/shared/lib/classNames/classNames'
 import cls from './ArticleDetails.module.scss'
-import { DynamicModuleLoader, type ReducerList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
+import { DynamicModuleLoader, type ReducerList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
 import { articleDetailsReducer } from '../../model/slice/articleDetailsSlice'
 import { memo, useCallback, useEffect } from 'react'
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch'
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch'
 import { fetchArticleById } from '../../model/services/fetchArticleById/fetchArticleById'
 import { useSelector } from 'react-redux'
 import {
@@ -11,17 +11,17 @@ import {
     getArticleDetailsError,
     getArticleDetailsIsLoading
 } from '../../model/selectors/articleDetails'
-import { Text, TextAlign, TextSize } from 'shared/ui/Text/Text'
-import { Skeleton } from 'shared/ui/Skeleton/Skeleton'
-import { Avatar } from 'shared/ui/Avatar/Avatar'
-import EyeIcon from 'shared/assets/icons/eye.svg'
-import CalendarIcon from 'shared/assets/icons/calendar.svg'
-import { Icon } from 'shared/ui/Icon/Icon'
+import { Text, TextAlign, TextSize } from '@/shared/ui/Text/Text'
+import { Skeleton } from '@/shared/ui/Skeleton/Skeleton'
+import { Avatar } from '@/shared/ui/Avatar/Avatar'
+import EyeIcon from '@/shared/assets/icons/eye.svg'
+import CalendarIcon from '@/shared/assets/icons/calendar.svg'
+import { Icon } from '@/shared/ui/Icon/Icon'
 import { type ArticleBlock, ArticleBlockType } from '../../model/types/article'
 import { ArticleCodeBlockComponent } from '../ArticleCodeBlockComponent/ArticleCodeBlockComponent'
 import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent'
 import { ArticleImageBlockComponent } from '../ArticleImageBlockComponent/ArticleImageBlockComponent'
-import { HStack, VStack } from 'shared/ui/Stack'
+import { HStack, VStack } from '@/shared/ui/Stack'
 
 interface ArticleDetailsProps {
     className?: string

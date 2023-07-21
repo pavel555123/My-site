@@ -1,4 +1,4 @@
-import { classNames } from 'shared/lib/classNames/classNames'
+import { classNames } from '@/shared/lib/classNames/classNames'
 import cls from './Select.module.scss'
 import { type ChangeEvent, useMemo } from 'react'
 import { type DefaultTFuncReturn } from 'i18next'
