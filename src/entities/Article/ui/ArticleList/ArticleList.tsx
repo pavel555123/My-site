@@ -31,7 +31,7 @@ export const ArticleList = memo((props: ArticleListProps) => {
         view = ArticleView.SMALL,
         target
     } = props
-    const { t } = useTranslation()
+    const { t } = useTranslation('article')
 
     const renderArticle = (article: Article) => {
         return (

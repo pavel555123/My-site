@@ -19,5 +19,14 @@
   "Форма авторизации": "Authorization form",
   "Неверный логин или пароль": "Incorrect login or password",
   "Профиль": "Profile",
-  "Статьи": "Articles"
+  "Статьи": "Articles",
+  "Приложение": "Application",
+  "Создать статью": "Create article",
+  "Админка": "Adminka",
+  "Ошибка": "Error",
+  "Комментарии": "Comments",
+  "Комментарии отсутствуют": "There are no comments",
+  "Введите текст комментария": "Enter the comment text",
+  "Отправить": "Send",
+  "Панель Админа": "Admin Panel"
 }

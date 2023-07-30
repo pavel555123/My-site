@@ -12,8 +12,10 @@
   "Отменить": "Cancel",
   "Сохранить": "Save",
   "Серверная ошибка": "Server error",
+  "Серверная ошибка при сохранении": "Server saving error",
   "Имя и фамилия обязательны": "Incorrect Name or Surname",
   "Данные не указаны": "No Data",
   "Некорректный возраст": "Incorrect age",
-  "Некорректная страна": "Incorrect country"
+  "Некорректная страна": "Incorrect country",
+  "Некорректный регион": "Incorrect region"
 }

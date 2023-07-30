@@ -1,5 +1,22 @@
 {
   "Детали статьи": "Article Details",
   "Страница статей":"Articles page",
-  "Статья не найдена": "Article not found"
+  "Статья не найдена": "Article not found",
+  "Статьи не найдены": "Articles not found",
+  "Поиск": "Search",
+  "возрастанию": "asc",
+  "убыванию": "desc",
+  "дате создания": "date of creation",
+  "названию": "title",
+  "просмотрам": "views",
+  "Сортировать ПО": "Sort BY",
+  "по": "by",
+  "Все статьи": "All articles",
+  "Айти": "IT",
+  "Экономика": "Economic",
+  "Наука": "Science",
+  "Назад к списку": "Back to the list",
+  "Редактировать": "Edit",
+  "Рекомендуем": "Recommended",
+  "Читать далее...": "Read more..."
 }
