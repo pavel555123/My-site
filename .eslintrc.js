@@ -40,6 +40,12 @@ module.exports = {
         '@typescript-eslint/restrict-template-expressions': 'off',
         '@typescript-eslint/consistent-type-imports': 'off',
         'test-imports-plugin/path-checker': ['error', { alias: '@' }],
-        'test-imports-plugin/public-api-imports': ['error', { alias: '@' }]
+        'test-imports-plugin/public-api-imports': [
+            'error',
+            {
+                alias: '@',
+                testFilesPatterns: ['**/*.test.*', '**/*.story.*', '**/StoreDecorator.tsx']
+            }
+        ]
     }
 }
