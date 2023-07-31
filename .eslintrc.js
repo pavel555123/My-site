@@ -46,6 +46,29 @@ module.exports = {
                 alias: '@',
                 testFilesPatterns: ['**/*.test.*', '**/*.story.*', '**/StoreDecorator.tsx']
             }
+        ],
+        'import/order': [
+            'error',
+            {
+                pathGroups: [
+                    {
+                        pattern: '@/**',
+                        group: 'external',
+                        position: 'after'
+                    }
+                ],
+                groups: [
+                    'builtin',
+                    'external',
+                    'internal',
+                    'unknown',
+                    'parent',
+                    'sibling',
+                    'index',
+                    'object',
+                    'type'
+                ]
+            }
         ]
     }
 }

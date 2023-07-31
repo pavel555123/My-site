@@ -1,9 +1,9 @@
 import React from 'react'
 import { type ComponentMeta, type ComponentStory } from '@storybook/react'
 
-import ArticleEditPage from './ArticleEditPage'
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator'
 import { type Article, ArticleType, ArticleBlockType } from '@/entities/Article'
+import ArticleEditPage from './ArticleEditPage'
 
 export default {
     title: 'pages/ArticleEditPage/ArticleEditPage',

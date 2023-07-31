@@ -1,6 +1,6 @@
-import { getProfileValidateErrors } from './getProfileValidateErrors'
 import { type StateSchema } from '@/app/providers/StoreProvider'
 import { ValidateProfileError } from '../../consts/consts'
+import { getProfileValidateErrors } from './getProfileValidateErrors'
 
 describe('getProfileValidateErrors.test', () => {
     test('should return errors', () => {

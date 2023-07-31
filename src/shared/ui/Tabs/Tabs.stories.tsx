@@ -1,8 +1,8 @@
 import React from 'react'
 import { type ComponentMeta, type ComponentStory } from '@storybook/react'
 
-import { Tabs } from './Tabs'
 import { action } from '@storybook/addon-actions'
+import { Tabs } from './Tabs'
 
 export default {
     title: 'shared/Tabs',

@@ -1,12 +1,15 @@
 import { useTranslation } from 'react-i18next'
 import { memo, useCallback } from 'react'
-import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch'
 import { useSelector } from 'react-redux'
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch'
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect'
 import { type Currency } from '@/entities/Currency'
 import { type Country } from '@/entities/Country'
 import { Text, TextTheme } from '@/shared/ui/Text/Text'
 import { ProfileCard } from '@/entities/Profile'
+import { DynamicModuleLoader, type ReducerList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
+import { VStack } from '@/shared/ui/Stack'
+import { classNames } from '@/shared/lib/classNames/classNames'
 import { getProfileForm } from '../../model/selectors/getProfileForm/getProfileForm'
 import { getProfileIsLoading } from '../../model/selectors/getProfileIsLoading/getProfileIsLoading'
 import { getProfileError } from '../../model/selectors/getProfileError/getProfileError'
@@ -14,12 +17,9 @@ import { getProfileReadonly } from '../../model/selectors/getProfileReadonly/get
 import { getProfileValidateErrors } from '../../model/selectors/getProfileValidateErrors/getProfileValidateErrors'
 import { fetchProfileData } from '../../model/services/fetchProfileData/fetchProfileData'
 import { profileActions, profileReducer } from '../../model/slice/profileSlice'
-import { DynamicModuleLoader, type ReducerList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
 import {
     EditableProfileCardHeader
 } from '../EditableProfileCardHeader/EditableProfileCardHeader'
-import { VStack } from '@/shared/ui/Stack'
-import { classNames } from '@/shared/lib/classNames/classNames'
 import { ValidateProfileError } from '../../model/consts/consts'
 
 const reducers: ReducerList = {
