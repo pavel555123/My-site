@@ -1,5 +1,5 @@
 import { memo, useCallback } from 'react'
-import { ListBox } from '@/shared/ui/Popups/ui/ListBox/ListBox'
+import { ListBox } from '@/shared/ui/Popups'
 import { classNames } from '@/shared/lib/classNames/classNames'
 import { Country } from '../../model/types/country'
 
