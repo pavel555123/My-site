@@ -2,18 +2,18 @@ import React from 'react'
 import { type ComponentMeta, type ComponentStory } from '@storybook/react'
 
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator'
-import { Theme } from '@/app/providers/ThemeProvider'
-import { ThemeSwitcher } from './ThemeSwitcher'
+import { Theme } from '@/shared/const/theme'
+import { LangSwitcher } from './LangSwitcher'
 
 export default {
-    title: 'widgets/ThemeSwitcher',
-    component: ThemeSwitcher,
+    title: 'shared/LangSwitcher',
+    component: LangSwitcher,
     argTypes: {
         backgroundColor: { control: 'color' }
     }
-} as ComponentMeta<typeof ThemeSwitcher>
+} as ComponentMeta<typeof LangSwitcher>
 
-const Template: ComponentStory<typeof ThemeSwitcher> = (args) => <ThemeSwitcher {...args} />
+const Template: ComponentStory<typeof LangSwitcher> = (args) => <LangSwitcher {...args} />
 
 export const Normal = Template.bind({})
 Normal.args = {

@@ -4,8 +4,8 @@ import { type ComponentMeta, type ComponentStory } from '@storybook/react'
 import { Country } from '@/entities/Country'
 import { Currency } from '@/entities/Currency'
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator'
-import { Theme } from '@/app/providers/ThemeProvider'
 import Avatar from '@/shared/assets/tests/rabbit.jpeg'
+import { Theme } from '@/shared/const/theme'
 import { ProfileCard } from './ProfileCard'
 
 export default {
