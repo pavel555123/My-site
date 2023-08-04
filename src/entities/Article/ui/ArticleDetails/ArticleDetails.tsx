@@ -10,12 +10,12 @@ import EyeIcon from '@/shared/assets/icons/eye.svg'
 import CalendarIcon from '@/shared/assets/icons/calendar.svg'
 import { Icon } from '@/shared/ui/Icon'
 import { HStack, VStack } from '@/shared/ui/Stack'
+import { articleDetailsReducer } from '../../model/slice/articleDetailsSlice'
 import { ArticleCodeBlockComponent } from '../ArticleCodeBlockComponent/ArticleCodeBlockComponent'
 import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent'
 import { ArticleImageBlockComponent } from '../ArticleImageBlockComponent/ArticleImageBlockComponent'
 import { fetchArticleById } from '../../model/services/fetchArticleById/fetchArticleById'
 import { ArticleBlockType } from '../../model/consts/articleConsts'
-import { articleDetailsReducer } from '../../model/slice/articleDetailsSlice'
 import {
     getArticleDetailsData,
     getArticleDetailsError,
