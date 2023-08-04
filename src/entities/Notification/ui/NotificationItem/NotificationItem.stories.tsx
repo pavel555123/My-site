@@ -1,6 +1,5 @@
 import React from 'react'
 import { type ComponentMeta, type ComponentStory } from '@storybook/react'
-import withMock from 'storybook-addon-mock'
 import { NotificationItem } from './NotificationItem'
 
 export default {
@@ -8,8 +7,7 @@ export default {
     component: NotificationItem,
     argTypes: {
         backgroundColor: { control: 'color' }
-    },
-    decorators: [withMock]
+    }
 } as ComponentMeta<typeof NotificationItem>
 
 const Template: ComponentStory<typeof NotificationItem> = (args) => <NotificationItem {...args} />
