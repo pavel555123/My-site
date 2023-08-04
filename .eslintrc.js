@@ -6,7 +6,8 @@ module.exports = {
     extends: [
         'plugin:react/recommended',
         'standard-with-typescript',
-        'plugin:i18next/recommended'
+        'plugin:i18next/recommended',
+        'plugin:cypress/recommended'
     ],
     parserOptions: {
         project: 'tsconfig.json',
@@ -38,6 +39,8 @@ module.exports = {
         '@typescript-eslint/no-misused-promises': 'off',
         '@typescript-eslint/no-non-null-assertion': 'off',
         '@typescript-eslint/restrict-template-expressions': 'off',
+        '@typescript-eslint/no-namespace': 'off',
+        '@typescript-eslint/method-signature-style': 'off',
         '@typescript-eslint/consistent-type-imports': 'off',
         'test-imports-plugin/path-checker': ['error', { alias: '@' }],
         'test-imports-plugin/public-api-imports': [

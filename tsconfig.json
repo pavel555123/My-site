@@ -30,6 +30,8 @@
     "./src/**/*.tsx",
     "./*.ts",
     "./config/**/*.ts",
-    "./scripts/**/*.ts"
+    "./scripts/**/*.ts",
+    "./cypress/**/*.ts",
+    "./cypress/**/*.tsx",
   ]
 }
