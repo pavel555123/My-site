@@ -4,13 +4,14 @@ module.exports = {
         es2021: true
     },
     extends: [
-        'plugin:react/recommended',
         'standard-with-typescript',
+        // './cypress/tsconfig.json',
+        'plugin:react/recommended',
         'plugin:i18next/recommended',
         'plugin:cypress/recommended'
     ],
     parserOptions: {
-        project: 'tsconfig.json',
+        project: ['tsconfig.json', './cypress/tsconfig.json'],
         tsconfigRootDir: __dirname,
         sourceType: 'module'
     },
@@ -41,6 +42,7 @@ module.exports = {
         '@typescript-eslint/restrict-template-expressions': 'off',
         '@typescript-eslint/no-namespace': 'off',
         '@typescript-eslint/method-signature-style': 'off',
+        'cypress/unsafe-to-chain-command': 'off',
         '@typescript-eslint/consistent-type-imports': 'off',
         'test-imports-plugin/path-checker': ['error', { alias: '@' }],
         'test-imports-plugin/public-api-imports': [

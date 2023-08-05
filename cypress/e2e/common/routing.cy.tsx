@@ -6,7 +6,7 @@ describe('Роутинг', () => {
             cy.visit('/')
             cy.get(selectByTestId('MainPage')).should('exist')
         })
-        it('Переход на страницу профиля', () => {
+        it('C', () => {
             cy.visit('/profile/1')
             cy.get(selectByTestId('MainPage')).should('exist')
         })
