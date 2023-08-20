@@ -5,7 +5,6 @@ module.exports = {
     },
     extends: [
         'standard-with-typescript',
-        // './cypress/tsconfig.json',
         'plugin:react/recommended',
         'plugin:i18next/recommended',
         'plugin:cypress/recommended'
@@ -15,12 +14,7 @@ module.exports = {
         tsconfigRootDir: __dirname,
         sourceType: 'module'
     },
-    plugins: [
-        'react',
-        'i18next',
-        'react-hooks',
-        'test-imports-plugin'
-    ],
+    plugins: ['react', 'i18next', 'react-hooks', 'test-imports-plugin'],
     rules: {
         indent: 'off',
         '@typescript-eslint/indent': [2, 4],
@@ -49,7 +43,11 @@ module.exports = {
             'error',
             {
                 alias: '@',
-                testFilesPatterns: ['**/*.test.*', '**/*.story.*', '**/StoreDecorator.tsx']
+                testFilesPatterns: [
+                    '**/*.test.*',
+                    '**/*.story.*',
+                    '**/StoreDecorator.tsx'
+                ]
             }
         ],
         'test-imports-plugin/layer-imports': [
