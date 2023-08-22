@@ -646,7 +646,8 @@
       "jsonSettings": {
         "theme": "app_blue_theme",
         "isFirstVisit": true,
-        "settingsPageHasBeenOpen": false
+        "settingsPageHasBeenOpen": false,
+        "isArticlesPageWasOpened": true
       },
       "avatar": "https://sun6-22.userapi.com/s/v1/ig2/Y8BnBV0EdImsIbqkNkVlZVqTulzpBfHr2tM6ksiACTeO7AM7RrCYKwg782EtabN99pw-i5t1Mv7Wc6f6PJxUT9eF.jpg?size=900x900&quality=96&crop=0,0,900,900&ava=1"
     },
@@ -664,7 +665,8 @@
       "jsonSettings": {
         "theme": "app_blue_theme",
         "isFirstVisit": true,
-        "settingsPageHasBeenOpen": false
+        "settingsPageHasBeenOpen": false,
+        "isArticlesPageWasOpened": true
       },
       "avatar": "https://xakep.ru/wp-content/uploads/2018/05/171485/KuroiSH-hacker.jpg"
     },
@@ -682,7 +684,8 @@
       "jsonSettings": {
         "theme": "app_blue_theme",
         "isFirstVisit": true,
-        "settingsPageHasBeenOpen": false
+        "settingsPageHasBeenOpen": false,
+        "isArticlesPageWasOpened": true
       },
       "avatar": "https://xakep.ru/wp-content/uploads/2018/05/171485/KuroiSH-hacker.jpg"
     },
