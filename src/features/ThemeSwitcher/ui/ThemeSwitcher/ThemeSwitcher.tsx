@@ -1,11 +1,10 @@
 import { memo, useCallback } from 'react'
 import { classNames } from '@/shared/lib/classNames/classNames'
 import { useTheme } from '@/shared/lib/hooks/useTheme/useTheme'
-import LightIcon from '@/shared/assets/icons/theme-light.svg'
-import DarkIcon from '@/shared/assets/icons/theme-dark.svg'
-import { Theme } from '@/shared/const/theme'
+import ThemeIcon from '@/shared/assets/icons/theme-light.svg'
 import { saveJsonSettings } from '@/entities/User'
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch'
+import { Icon } from '@/shared/ui/Icon'
 import { Button, ButtonTheme } from '../../../../shared/ui/Button/Button'
 
 interface ThemeSwitcherProps {
@@ -13,6 +12,7 @@ interface ThemeSwitcherProps {
 }
 
 export const ThemeSwitcher = memo(({ className }: ThemeSwitcherProps) => {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const { theme, toggleTheme } = useTheme()
     const dispatch = useAppDispatch()
 
@@ -20,7 +20,7 @@ export const ThemeSwitcher = memo(({ className }: ThemeSwitcherProps) => {
         toggleTheme((newTheme) => {
             dispatch(saveJsonSettings({ theme: newTheme }))
         })
-    }, [toggleTheme])
+    }, [dispatch, toggleTheme])
 
     return (
         <Button
@@ -28,7 +28,7 @@ export const ThemeSwitcher = memo(({ className }: ThemeSwitcherProps) => {
             onClick={onToggleHandler}
             theme={ButtonTheme.CLEAR}
         >
-            {theme === Theme.DARK ? <DarkIcon/> : <LightIcon/>}
+            <Icon Svg={ThemeIcon} width={40} height={40} inverted/>
         </Button>
     )
 })
