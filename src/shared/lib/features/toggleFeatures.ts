@@ -7,7 +7,8 @@ interface ToggleFeaturesOptions<T> {
     off: () => T
 }
 
-export function toggleFeatures<T> ({ name, on, off }: ToggleFeaturesOptions<T>): T {
+export function toggleFeatures<T> (props: ToggleFeaturesOptions<T>): T {
+    const { name, on, off } = props
     if (getFeatureFlag(name)) {
         return on()
     }

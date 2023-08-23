@@ -10,9 +10,7 @@
     "moduleResolution": "node",
     "baseUrl": ".",
     "paths": {
-      "@/*": [
-        "./src/*"
-      ]
+      "@/*": ["./src/*"]
     },
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
@@ -24,12 +22,10 @@
     }
   },
   "include": [
-    "./config/jest/setupTests.ts",
-    "./config/jest/jestEmptyComponent.tsx",
     "./src/**/*.ts",
     "./src/**/*.tsx",
-    "./*.ts",
     "./config/**/*.ts",
+    "./config/**/*.tsx",
     "./scripts/**/*.ts"
   ]
 }
