@@ -9,6 +9,7 @@ import { classNames } from '@/shared/lib/classNames/classNames'
 import { type StateSchema } from '@/app/providers/StoreProvider'
 import { useThrottle } from '@/shared/lib/hooks/useThrottle/useThrottle'
 import { TestsProps } from '@/shared/types/tests'
+import { toggleFeatures } from '@/shared/lib/features'
 import cls from './Page.module.scss'
 
 export const PAGE_ID = 'PAGE_ID'
@@ -55,7 +56,11 @@ export const Page = memo((props: PageProps) => {
         <main
             data-testid={props['data-testid'] ?? 'Page'}
             ref={wrapperRef}
-            className={classNames(cls.Page, {}, [className])}
+            className={classNames(toggleFeatures({
+                name: 'isAppRedesigned',
+                on: () => cls.PageRedesigned,
+                off: () => cls.Page
+            }), {}, [className])}
             onScroll={onScroll}
             id={PAGE_ID}
         >
