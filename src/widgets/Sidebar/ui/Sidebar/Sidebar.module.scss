@@ -4,30 +4,30 @@
   height: calc(100vh - var(--navbar-height));
   background: var(--inverted-bg-color);
   transition: width 0.3s;
-}
 
-.switchers {
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  bottom: 20px;
-}
+  .switchers {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    bottom: 20px;
+  }
 
-.lang {
-  margin-left: 20px;
-}
+  .lang {
+    margin-left: 20px;
+  }
 
-.collapseBtn {
-  position: absolute;
-  right: -32px;
-  bottom: 32px;
-  z-index: 10;
-}
+  .collapseBtn {
+    position: absolute;
+    right: -32px;
+    bottom: 32px;
+    z-index: 10;
+  }
 
-.items {
-  margin-top: 20px;
-  margin-left: 30px;
+  .items {
+    margin-top: 20px;
+    margin-left: 30px;
+  }
 }
 
 .collapsed {
@@ -50,12 +50,62 @@
 }
 
 .SideBarRedesigned {
+  position: relative;
   width: 220px;
   height: 100%;
   background: var(--light-bg-redesigned);
   border-radius: 32px;
+
+  .items {
+    margin-top: 40px;
+  }
+
+  .collapseBtn {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    z-index: 10;
+    transform: rotate(90deg);
+  }
+
+  .appLogo {
+    padding-top: 20px;
+  }
+
+  .switchers {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    bottom: 20px;
+    gap: 16px;
+  }
 }
 
-.appLogo {
-  padding-top: 20px;
+.collapsedRedesigned {
+  width: 50px;
+
+  .switchers {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .items {
+    display: flex;
+    align-items: center;
+  }
+
+  .lang {
+    margin-left: 0;
+  }
+
+  .link {
+    width: 0;
+    opacity: 0;
+    transition: 0.2s opacity;
+  }
+
+  .collapseBtn {
+    transform: rotate(-90deg);
+  }
 }
