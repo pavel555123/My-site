@@ -11,20 +11,14 @@ interface AvatarProps {
     src?: string
     alt?: string
     size?: number
-    fallbackInverted?: boolean
 }
 
-/**
- * Устарел, используем новые компоненты из папки redesigned
- * @deprecated
- */
 export const Avatar = (props: AvatarProps) => {
     const {
         className,
         src,
         alt,
-        size = 100,
-        fallbackInverted
+        size = 100
     } = props
 
     const styles = useMemo<CSSProperties>(() => {
@@ -35,7 +29,7 @@ export const Avatar = (props: AvatarProps) => {
     }, [size])
 
     const fallback = <Skeleton width={size} height={size} border='50%'/>
-    const errorFallback = <Icon Svg={UserIcon} width={size} height={size} inverted={fallbackInverted}/>
+    const errorFallback = <Icon Svg={UserIcon} width={size} height={size}/>
 
     return (
         <AppImage

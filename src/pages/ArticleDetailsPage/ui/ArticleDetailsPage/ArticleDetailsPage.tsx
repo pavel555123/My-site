@@ -6,7 +6,7 @@ import { DynamicModuleLoader, type ReducerList } from '@/shared/lib/components/D
 import { Page } from '@/widgets/Page'
 import { ArticleRecommendationsList } from '@/features/articleRecommendationsList'
 import { ArticleRating } from '@/features/articleRating'
-import { VStack } from '@/shared/ui/deprecated/Stack'
+import { VStack } from '@/shared/ui/redesigned/Stack'
 import { ArticleDetailsComments } from '../ArticleDetailsComments/ArticleDetailsComments'
 import { ArticleDetailsPageHeader } from '../ArticleDetailsPageHeader/ArticleDetailsPageHeader'
 import { articleDetailsPageReducer } from '../../model/slice'
