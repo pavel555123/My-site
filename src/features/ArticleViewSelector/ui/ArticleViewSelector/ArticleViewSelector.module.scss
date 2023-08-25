@@ -1,7 +1,11 @@
 .ArticleViewSelector {
-  margin-left: auto;
+  .notSelected {
+    fill: var(--secondary-color);
+  }
 }
 
-.selected {
-  fill: var(--inverted-primary-color);
+.ArticleViewSelectorRedesigned {
+  .notSelected {
+    color: var(--light-bg-redesigned);
+  }
 }
