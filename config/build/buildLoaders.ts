@@ -38,18 +38,11 @@ export function buildLoaders (options: BuildOptions): webpack.RuleSetRule[] {
 
     const cssLoader = buildCssLoaders(options.isDev)
 
-    // const typescriptLoader = {
-    //     test: /\.tsx?$/,
-    //     use: 'ts-loader',
-    //     exclude: /node_modules/
-    // }
-
     return [
         fileLoader,
         svgLoader,
         codeBabelLoader,
         tsxCodeBabelLoader,
-        // typescriptLoader,
         cssLoader
     ]
 }

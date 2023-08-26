@@ -2,7 +2,9 @@ import { Fragment, type ReactNode, useMemo } from 'react'
 import { Listbox as HListBox } from '@headlessui/react'
 import { classNames } from '@/shared/lib/classNames/classNames'
 import { type DropdownDirection } from '@/shared/types/ui'
-import { HStack } from '../../../../redesigned/Stack/HStack/HStack'
+import ArrowIcon from '@/shared/assets/icons/arrow-bottom.svg'
+import { Icon } from '../../../Icon'
+import { HStack } from '../../../../redesigned/Stack'
 import { Button } from '../../../Button/Button'
 import { mapDirectionClass } from '../../styles/consts'
 import popupCls from '../../styles/popup.module.scss'
@@ -54,7 +56,7 @@ export function ListBox<T extends string> (props: ListBoxProps<T>) {
                 disabled={readonly}
             >
                 <HListBox.Button className={classNames(cls.trigger, { [cls.hidden]: readonly })} as='div'>
-                    <Button variant='filled' disabled={readonly}>
+                    <Button variant='filled' addonRight={<Icon Svg={ArrowIcon}/>} disabled={readonly}>
                         {selectedItem?.content ?? defaultValue}
                     </Button>
                 </HListBox.Button>

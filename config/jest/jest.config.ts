@@ -1,15 +1,6 @@
 import path from 'path'
 
 export default {
-    // All imported modules in your tests should be mocked automatically
-    // automock: false,
-
-    // Stop running tests after `n` failures
-    // bail: 0,
-
-    // The directory where Jest should store its cached dependency information
-    // cacheDirectory: "C:\\Users\\Наталья\\AppData\\Local\\Temp\\jest",
-
     globals: {
         IS_DEV: true,
         API: '',
@@ -52,6 +43,15 @@ export default {
             inlineSource: true
         }]
     ]
+
+    // All imported modules in your tests should be mocked automatically
+    // automock: false,
+
+    // Stop running tests after `n` failures
+    // bail: 0,
+
+    // The directory where Jest should store its cached dependency information
+    // cacheDirectory: "C:\\Users\\Наталья\\AppData\\Local\\Temp\\jest",
 
     // Indicates whether the coverage information should be collected while executing the test
     // collectCoverage: false,

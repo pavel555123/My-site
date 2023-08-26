@@ -1,7 +1,7 @@
 import { ReactNode, useEffect, useMemo, useState } from 'react'
 import { Theme } from '@/shared/const/theme'
 import { useJsonSettings } from '@/entities/User'
-import { ThemeContext } from '../../../../shared/lib/context/ThemeContext'
+import { ThemeContext } from '@/shared/lib/context/ThemeContext'
 
 interface ThemeProviderProps {
     initialTheme?: Theme
