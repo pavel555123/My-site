@@ -39,6 +39,7 @@ module.exports = {
         '@typescript-eslint/method-signature-style': 'off',
         'cypress/unsafe-to-chain-command': 'off',
         '@typescript-eslint/no-confusing-void-expression': 'off',
+        'n/no-callback-literal': 'off',
         '@typescript-eslint/consistent-type-imports': 'off',
         'test-imports-plugin/path-checker': ['error', { alias: '@' }],
         'test-imports-plugin/public-api-imports': [

@@ -2,12 +2,8 @@ import { createAsyncThunk } from '@reduxjs/toolkit'
 import { type ThunkConfig } from '@/app/providers/StoreProvider'
 import { type Article } from '@/entities/Article'
 
-export const fetchArticleRecommendations = createAsyncThunk<
-Article[],
 // eslint-disable-next-line @typescript-eslint/no-invalid-void-type
-void,
-ThunkConfig<string>
->(
+export const fetchArticleRecommendations = createAsyncThunk<Article[], void, ThunkConfig<string>>(
     'articleDetailsPage/fetchArticleRecommendations',
     async (props, ThunkAPI) => {
         const { extra, rejectWithValue } = ThunkAPI
