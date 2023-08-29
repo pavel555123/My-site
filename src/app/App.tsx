@@ -25,7 +25,7 @@ const App = () => {
         <ToggleFeatures
             feature={'isAppRedesigned'}
             on={
-                <div className={classNames('app_redesigned', {}, [])}>
+                <div className={classNames('app_redesigned', {}, [])} id='app'>
                     <Suspense fallback=''>
                         <MainLayout
                             header={<Navbar/>}
@@ -36,7 +36,7 @@ const App = () => {
                 </div>
             }
             off={
-                <div className={classNames('app', {}, [])}>
+                <div className={classNames('app', {}, [])} id='app'>
                     <Suspense fallback=''>
                         <Navbar/>
                         <div className='content-page'>
