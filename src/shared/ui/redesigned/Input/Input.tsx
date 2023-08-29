@@ -1,14 +1,21 @@
 import { type InputHTMLAttributes, memo, ReactNode, useEffect, useRef, useState } from 'react'
+import { DefaultTFuncReturn } from 'i18next'
 import { classNames, type Mods } from '@/shared/lib/classNames/classNames'
+import { HStack } from '../Stack'
+import { Text } from '../Text'
 import cls from './Input.module.scss'
 
-type HTMLInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange' | 'placeholder' | 'readOnly'>
+type HTMLInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange' | 'placeholder' | 'readOnly' | 'size'>
+
+type InputSize = 's' | 'm' | 'l'
 
 interface InputProps extends HTMLInputProps {
     className?: string
     value?: string | number
+    label?: string | DefaultTFuncReturn
+    size?: InputSize
     onChange?: (value: string) => void
-    placeholder?: string
+    placeholder?: string | DefaultTFuncReturn
     autofocus?: boolean
     readonly?: boolean
     addonLeft?: ReactNode
@@ -19,6 +26,8 @@ export const Input = memo((props: InputProps) => {
     const {
         className,
         value,
+        label,
+        size = 'm',
         onChange,
         type = 'text',
         placeholder,
@@ -58,8 +67,8 @@ export const Input = memo((props: InputProps) => {
         [cls.withAddonRight]: Boolean(addonRight)
     }
 
-    return (
-        <div className={classNames(cls.InputWrapper, mods, [className])}>
+    const input = (
+        <div className={classNames(cls.InputWrapper, mods, [className, cls[size]])}>
             <div className={cls.addonLeft}>{addonLeft}</div>
             <input
                 className={cls.input}
@@ -67,7 +76,7 @@ export const Input = memo((props: InputProps) => {
                 value = {value}
                 onChange={onChangeHandler}
                 readOnly={readonly}
-                placeholder={placeholder}
+                placeholder={placeholder as string}
                 onFocus={onFocus}
                 onBlur={onBlur}
                 {...otherProps}
@@ -75,4 +84,15 @@ export const Input = memo((props: InputProps) => {
             <div className={cls.addonRight}>{addonRight}</div>
         </div>
     )
+
+    if (label) {
+        return (
+            <HStack gap='8' max>
+                <Text text={label}/>
+                {input}
+            </HStack>
+        )
+    }
+
+    return input
 })
