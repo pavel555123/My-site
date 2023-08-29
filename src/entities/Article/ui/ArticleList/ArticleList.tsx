@@ -2,6 +2,8 @@ import { useTranslation } from 'react-i18next'
 import { type HTMLAttributeAnchorTarget, memo } from 'react'
 import { Text, TextSize } from '@/shared/ui/deprecated/Text'
 import { classNames } from '@/shared/lib/classNames/classNames'
+import { ToggleFeatures } from '@/shared/lib/features'
+import { HStack } from '@/shared/ui/redesigned/Stack'
 import { type Article } from '../../model/types/article'
 import { ArticleListItem } from '../ArticleListItem/ArticleListItem'
 import { ArticleListItemSkeleton } from '../ArticleListItem/ArticleListItemSkeleton'
@@ -55,16 +57,35 @@ export const ArticleList = memo((props: ArticleListProps) => {
     }
 
     return (
-        <div
-            className={classNames(cls.ArticleList, {}, [className, cls[view]])}
-            data-testid={'ArticleList'}
-        >
-            {articles.length > 0
-                ? articles.map(renderArticle)
-                : null
+        <ToggleFeatures
+            feature={'isAppRedesigned'}
+            on={
+                <HStack
+                    className={classNames(cls.ArticleListRedesigned, {}, [])}
+                    gap='16'
+                    wrap='wrap'
+                    data-testid={'ArticleList'}
+                >
+                    {articles.length > 0
+                        ? articles.map(renderArticle)
+                        : null
+                    }
+                    {isLoading && getSkeletons(view) }
+                </HStack>
             }
-            {isLoading && getSkeletons(view) }
-        </div>
+            off={
+                <div
+                    className={classNames(cls.ArticleList, {}, [className, cls[view]])}
+                    data-testid={'ArticleList'}
+                >
+                    {articles.length > 0
+                        ? articles.map(renderArticle)
+                        : null
+                    }
+                    {isLoading && getSkeletons(view) }
+                </div>
+            }
+        />
     )
 })
 // import { classNames } from 'shared/lib/classNames/classNames'
