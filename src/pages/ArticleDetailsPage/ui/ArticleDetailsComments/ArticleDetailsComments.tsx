@@ -7,8 +7,10 @@ import { AddCommentForm } from '@/features/AddCommentForm'
 import { CommentList } from '@/entities/Comment'
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch'
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect'
-import { Text, TextSize } from '@/shared/ui/deprecated/Text'
+import { Text as TextDeprecated, TextSize } from '@/shared/ui/deprecated/Text'
+import { Text } from '@/shared/ui/redesigned/Text'
 import { VStack } from '@/shared/ui/redesigned/Stack'
+import { ToggleFeatures } from '@/shared/lib/features'
 import { getArticleComments } from '../../model/slice/articleDetailsCommentsSlice'
 import { getArticleCommentsIsLoading } from '../../model/selectors/comments'
 import { addCommentForArticle } from '../../model/services/addCommentForArticle/addCommentForArticle'
@@ -38,9 +40,10 @@ export const ArticleDetailsComments = memo((props: ArticleDetailsCommentsProps) 
 
     return (
         <VStack className={classNames('', {}, [className])} gap='16' max>
-            <Text
-                title={t('Комментарии')}
-                size={TextSize.L}
+            <ToggleFeatures
+                feature={'isAppRedesigned'}
+                on={<Text title={t('Комментарии')} size='l'/>}
+                off={<TextDeprecated title={t('Комментарии')} size={TextSize.L}/>}
             />
             <Suspense fallback={<Loader/>}>
                 <AddCommentForm onSendComment={onSendComment}/>

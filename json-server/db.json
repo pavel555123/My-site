@@ -629,6 +629,12 @@
       "userId": "1",
       "text": "1241242354",
       "id": "BaFd9oM"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "    < div > Lorem ipsum dolor sit amet, consectetur adipisicing elit.Alias animi assumenda ea earum enim, eveniet illo impedit in laudantium, perferendis, placeat quibusdam quisquam quos recusandae rem repellendus sequi vel voluptatibus. </div> <div>Accusamus fugiat ipsum molestias necessitatibus nihil odio odit quisquam soluta. Adipisci aliquid amet dicta eum     itaque laboriosam laudantium magnam mollitia omnis ratione, rerum saepe soluta, ut! A autem earum laborum!</div> <div>Alias asperiores aspernatur blanditiis delectus dolorem dolorum eveniet ex facere fugit harum illum, in incidunt     ipsam ipsum minus molestiae, nam nulla optio quas quibusdam quisquam quod repudiandae sequi sint temporibus!</div> <div>Alias commodi consequatur consequuntur, cupiditate delectus deserunt error, esse excepturi explicabo fugit     molestiae nisi officia perspiciatis quibusdam, quis ratione reiciendis repellat repudiandae sequi ut vel veritatis     voluptate? Impedit, necessitatibus, sunt?</div> <div>Cupiditate fugit harum ipsum sit unde! Accusamus accusantium aliquid architecto, consequatur dolorem hic ipsum     itaque iusto, neque numquam odit officiis quam qui quibusdam rem rerum sequi vel vero vitae voluptas!</div> <div>Accusantium aperiam, assumenda atque commodi culpa dolor explicabo laborum modi, nesciunt, nulla ratione recusandae     sequi vero? Aperiam beatae eligendi explicabo labore, libero, mollitia nam nesciunt reiciendis repellat temporibus,     totam ullam.</div> <div>At dolore labore quas quis veniam vitae? Accusantium alias, consequatur dolorem eligendi eveniet facilis fuga id     inventore molestiae molestias nam natus officia placeat possimus quas sint temporibus totam. Dolore, modi!</div> <div>Ad aperiam at consequatur cumque deserunt dolorum fuga impedit incidunt maiores molestiae necessitatibus nihil     quibusdam quisquam repellendus, temporibus tenetur ullam velit. Deserunt eaque facere ipsum iure minus numquam quam     quos!</div> <div>Aut beatae blanditiis cum dolor dolorem ducimus enim eveniet excepturi explicabo, illum impedit in minima minus     modi nobis optio perspiciatis porro quae sed soluta sunt, suscipit tempore totam vel veniam.</div> <div>Ab fugit ipsam iste iusto laboriosam libero nihil optio perferendis ratione vero. A enim eveniet ex obcaecati     soluta. A animi consequatur dolorum facere maxime, praesentium quae quod sed similique voluptate.</div>",
+      "id": "oazFVZi"
     }
   ],
   "users": [
@@ -645,7 +651,7 @@
         "isAppRedesigned": true
       },
       "jsonSettings": {
-        "theme": "app_light_theme",
+        "theme": "app_dark_theme",
         "isFirstVisit": true,
         "settingsPageHasBeenOpen": false,
         "isArticlesPageWasOpened": true
