@@ -20,7 +20,11 @@ export const ThemeProvider = ({ children, initialTheme }: ThemeProviderProps) =>
             setTheme(defaultTheme)
             setIsThemeInit(true)
         }
-    }, [defaultTheme, isThemeInit])
+    }, [defaultTheme, isThemeInit, theme])
+
+    useEffect(() => {
+        document.body.className = theme
+    }, [theme])
 
     const defaultProps = useMemo(() => ({
         theme,

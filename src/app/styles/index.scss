@@ -4,9 +4,7 @@
 @import "./themes/dark";
 @import "./themes/blue";
 
-.app,
-.app_modal,
-.app_drawer {
+.app {
   min-height: 100vh;
   background: var(--bg-color);
   color: var(--primary-color);
@@ -30,10 +28,25 @@
 }
 
 *::-webkit-scrollbar-track {
-  background: var(--card-bg); /* цвет дорожки */
+  background: var(--light-bg-redesigned); /* цвет дорожки */
 }
 
 *::-webkit-scrollbar-thumb {
+  background-color: var(--icon-redesigned); /* цвет плашки */
+  border-radius: 20px; /* закругления плашки */
+  border: 1px solid var(--accent-redesigned); /* padding вокруг плашки */
+}
+
+.app *::-webkit-scrollbar {
+  width: 10px; /* ширина scrollbar */
+  height: 10px;
+}
+
+.app *::-webkit-scrollbar-track {
+  background: var(--card-bg); /* цвет дорожки */
+}
+
+.app *::-webkit-scrollbar-thumb {
   background-color: var(--inverted-primary-color); /* цвет плашки */
   border-radius: 20px; /* закругления плашки */
   border: 2px solid var(--primary-color); /* padding вокруг плашки */

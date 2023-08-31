@@ -11,7 +11,7 @@ interface UpdateFeatureFlagsProps {
 
 // eslint-disable-next-line @typescript-eslint/no-invalid-void-type
 export const updateFeatureFlags = createAsyncThunk<void, UpdateFeatureFlagsProps, ThunkConfig<string>>(
-    'user/saveJsonSettings',
+    'features/updateFeatureFlags',
     async ({ userId, newFeatures }, ThunkAPI) => {
         const { dispatch, rejectWithValue } = ThunkAPI
 
@@ -27,6 +27,7 @@ export const updateFeatureFlags = createAsyncThunk<void, UpdateFeatureFlagsProps
             }))
 
             setFeatureFlags(allFeatures)
+            window.location.reload()
         } catch (e) {
             console.log(e)
             return rejectWithValue('error')
