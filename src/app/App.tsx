@@ -7,6 +7,8 @@ import { getUserInited, initAuthData } from '@/entities/User'
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch'
 import { ToggleFeatures } from '@/shared/lib/features'
 import { MainLayout } from '@/shared/layouts/MainLayout'
+import { AppLoaderLayout } from '@/shared/layouts/AppLoaderLayout'
+import { PageLoader } from '@/widgets/PageLoader'
 import { AppRouter } from './providers/router'
 
 const App = () => {
@@ -20,7 +22,17 @@ const App = () => {
     }, [dispatch, init])
 
     if (!init) {
-        return <div>Loading...</div>
+        return (
+            <ToggleFeatures
+                feature={'isAppRedesigned'}
+                on={
+                    <div className={classNames('app_redesigned', {}, [])}>
+                        <AppLoaderLayout/>
+                    </div>
+                }
+                off={<PageLoader/>}
+            />
+        )
     }
 
     return (
