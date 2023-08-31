@@ -90,7 +90,7 @@ export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
 
     return (
         <DynamicModuleLoader reducers={reducers}>
-            <VStack gap='8' max className={classNames('', {}, [className])}>
+            <VStack className={classNames('', {}, [className])} gap='16' max>
                 <EditableProfileCardHeader/>
                 {validateErrors?.length && validateErrors.map((err) => (
                     <Text

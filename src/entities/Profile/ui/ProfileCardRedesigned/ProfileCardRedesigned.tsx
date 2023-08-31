@@ -74,6 +74,7 @@ export const ProfileCardRedesigned = memo((props: ProfileCardProps) => {
         <Card
             className={className}
             padding='24'
+            border='partial'
             max
         >
             <VStack gap='32'>
