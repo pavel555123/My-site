@@ -14,8 +14,10 @@ const App = () => {
     const init = useSelector(getUserInited)
 
     useEffect(() => {
-        dispatch(initAuthData())
-    }, [dispatch])
+        if (!init) {
+            dispatch(initAuthData())
+        }
+    }, [dispatch, init])
 
     if (!init) {
         return <div>Loading...</div>

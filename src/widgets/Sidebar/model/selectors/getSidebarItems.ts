@@ -1,4 +1,4 @@
-import { createSelector } from '@reduxjs/toolkit'
+import { useSelector } from 'react-redux'
 import { getUserAuthData } from '@/entities/User'
 import MainIconDeprecated from '@/shared/assets/icons/main.svg'
 import AboutIconDeprecated from '@/shared/assets/icons/about.svg'
@@ -12,53 +12,52 @@ import { getRouteAbout, getRouteArticles, getRouteMain, getRouteProfile } from '
 import { toggleFeatures } from '@/shared/lib/features'
 import { type SidebarItemType } from '../types/sidebar'
 
-export const getSidebarItems = createSelector(
-    getUserAuthData,
-    (userData) => {
-        const sidebarItemsList: SidebarItemType[] = [
+export const useSidebarItems = () => {
+    const userData = useSelector(getUserAuthData)
+
+    const sidebarItemsList: SidebarItemType[] = [
+        {
+            path: getRouteMain(),
+            text: 'Главная',
+            Icon: toggleFeatures({
+                name: 'isAppRedesigned',
+                on: () => MainIcon,
+                off: () => MainIconDeprecated
+            })
+        },
+        {
+            path: getRouteAbout(),
+            text: 'О нас',
+            Icon: toggleFeatures({
+                name: 'isAppRedesigned',
+                on: () => AboutIcon,
+                off: () => AboutIconDeprecated
+            })
+        }
+    ]
+    if (userData) {
+        sidebarItemsList.push(
             {
-                path: getRouteMain(),
-                text: 'Главная',
+                path: getRouteProfile(userData.id),
+                text: 'Профиль',
                 Icon: toggleFeatures({
                     name: 'isAppRedesigned',
-                    on: () => MainIcon,
-                    off: () => MainIconDeprecated
-                })
+                    on: () => ProfileIcon,
+                    off: () => ProfileIconDeprecated
+                }),
+                authOnly: true
             },
             {
-                path: getRouteAbout(),
-                text: 'О нас',
+                path: getRouteArticles(),
+                text: 'Статьи',
                 Icon: toggleFeatures({
                     name: 'isAppRedesigned',
-                    on: () => AboutIcon,
-                    off: () => AboutIconDeprecated
-                })
+                    on: () => ArticleIcon,
+                    off: () => ArticleIconDeprecated
+                }),
+                authOnly: true
             }
-        ]
-        if (userData) {
-            sidebarItemsList.push(
-                {
-                    path: getRouteProfile(userData.id),
-                    text: 'Профиль',
-                    Icon: toggleFeatures({
-                        name: 'isAppRedesigned',
-                        on: () => ProfileIcon,
-                        off: () => ProfileIconDeprecated
-                    }),
-                    authOnly: true
-                },
-                {
-                    path: getRouteArticles(),
-                    text: 'Статьи',
-                    Icon: toggleFeatures({
-                        name: 'isAppRedesigned',
-                        on: () => ArticleIcon,
-                        off: () => ArticleIconDeprecated
-                    }),
-                    authOnly: true
-                }
-            )
-        }
-        return sidebarItemsList
+        )
     }
-)
+    return sidebarItemsList
+}
