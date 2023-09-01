@@ -1,4 +1,4 @@
-import { Suspense, useEffect } from 'react'
+import { memo, Suspense, useEffect } from 'react'
 import { useSelector } from 'react-redux'
 import { classNames } from '@/shared/lib/classNames/classNames'
 import { Navbar } from '@/widgets/Navbar'
@@ -11,8 +11,9 @@ import { AppLoaderLayout } from '@/shared/layouts/AppLoaderLayout'
 import { PageLoader } from '@/widgets/PageLoader'
 import { useAppToolbar } from './lib/useAppToolbar'
 import { AppRouter } from './providers/router'
+import { withTheme } from './providers/ThemeProvider/ui/withTheme'
 
-const App = () => {
+const App = memo(() => {
     const dispatch = useAppDispatch()
     const init = useSelector(getUserInited)
     const toolbar = useAppToolbar()
@@ -65,6 +66,6 @@ const App = () => {
             }
         />
     )
-}
+})
 
-export default App
+export default withTheme(App)

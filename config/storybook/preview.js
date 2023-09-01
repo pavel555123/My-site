@@ -1,4 +1,5 @@
 import { addDecorator } from '@storybook/react'
+import { FeatureFlagsDecorator } from '../../src/shared/config/storybook/FeatureFlagsDecorator/FeatureFlagsDecorator'
 import { StyleDecorator } from '../../src/shared/config/storybook/StyleDecorator/StyleDecorator'
 import { RouterDecorator } from '../../src/shared/config/storybook/RouterDecorator/RouterDecorator'
 import { SuspenseDecorator } from '../../src/shared/config/storybook/SuspenseDecorator/SuspenseDecorator'
@@ -27,3 +28,4 @@ addDecorator(StyleDecorator)
 // addDecorator(ThemeDecorator(Theme.LIGHT))
 addDecorator(RouterDecorator)
 addDecorator(SuspenseDecorator)
+addDecorator(FeatureFlagsDecorator({}))
