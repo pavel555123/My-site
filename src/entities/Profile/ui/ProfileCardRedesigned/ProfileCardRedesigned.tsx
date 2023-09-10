@@ -68,7 +68,7 @@ export const ProfileCardRedesigned = memo((props: ProfileCardProps) => {
         onChangeCountry,
         onChangeCurrency
     } = props
-    const { t } = useTranslation()
+    const { t } = useTranslation('profile')
 
     return (
         <Card

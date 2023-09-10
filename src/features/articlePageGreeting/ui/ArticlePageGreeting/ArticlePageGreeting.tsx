@@ -8,7 +8,7 @@ import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch
 import { Text } from '@/shared/ui/deprecated/Text'
 
 export const ArticlePageGreeting = memo(() => {
-    const { t } = useTranslation()
+    const { t } = useTranslation('article')
     const dispatch = useAppDispatch()
     const [isOpen, setIsOpen] = useState(false)
     const { isArticlesPageWasOpened } = useJsonSettings()

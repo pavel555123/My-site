@@ -17,5 +17,7 @@
   "Данные не указаны": "No Data",
   "Некорректный возраст": "Incorrect age",
   "Некорректная страна": "Incorrect country",
-  "Некорректный регион": "Incorrect region"
+  "Некорректный регион": "Incorrect region",
+  "Произошла ошибка при загрузке": "An error occurred while downloading",
+  "Попробуйте обновить страницу": "Try refreshing the page"
 }

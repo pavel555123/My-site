@@ -9,6 +9,7 @@
   "дате создания": "date of creation",
   "названию": "title",
   "просмотрам": "views",
+  "Сортировать по:": "Sort by:",
   "Сортировать ПО": "Sort BY",
   "по": "by",
   "Все статьи": "All articles",
@@ -18,5 +19,7 @@
   "Назад к списку": "Back to the list",
   "Редактировать": "Edit",
   "Рекомендуем": "Recommended",
-  "Читать далее...": "Read more..."
+  "Читать далее...": "Read more...",
+  "Добро пожаловать на страницу статей": "Welcome to the articles page",
+  "Здесь вы можете искать и просматривать статьи на различные темы": "Here you can search and view articles on various topics"
 }
