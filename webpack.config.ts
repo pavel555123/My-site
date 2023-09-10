@@ -18,7 +18,7 @@ export default (env: BuildEnv) => {
 
     const isDev = mode === 'development'
 
-    console.log(isDev, mode, PORT)
+    console.log(isDev, mode, PORT, apiUrl)
 
     return buildWebpackConfig({
         mode,
