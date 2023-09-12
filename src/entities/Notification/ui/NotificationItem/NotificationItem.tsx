@@ -16,6 +16,10 @@ interface NotificationItemProps {
 export const NotificationItem = memo((props: NotificationItemProps) => {
     const { className, item } = props
 
+    if (!item) {
+        return null
+    }
+
     const content = (
         <ToggleFeatures
             feature={'isAppRedesigned'}

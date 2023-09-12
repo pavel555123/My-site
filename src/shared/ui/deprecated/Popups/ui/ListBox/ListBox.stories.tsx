@@ -1,10 +1,9 @@
 import React from 'react'
 import { type ComponentMeta, type ComponentStory } from '@storybook/react'
-
 import { ListBox } from './ListBox'
 
 export default {
-    title: 'shared/ListBox',
+    title: 'shared/deprecated/Popups/ListBox',
     component: ListBox,
     argTypes: {
         backgroundColor: { control: 'color' }

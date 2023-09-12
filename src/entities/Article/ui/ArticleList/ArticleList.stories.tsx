@@ -1,6 +1,5 @@
 import React from 'react'
 import { type ComponentMeta, type ComponentStory } from '@storybook/react'
-
 import { type Article } from '../../model/types/article'
 import { ArticleView } from '../../model/consts/articleConsts'
 import { ArticleList } from './ArticleList'
@@ -95,20 +94,6 @@ const article = {
     ]
 } as Article
 
-export const isLoadingBig = Template.bind({})
-isLoadingBig.args = {
-    isLoading: true,
-    articles: [],
-    view: ArticleView.BIG
-}
-
-export const isLoadingSmall = Template.bind({})
-isLoadingSmall.args = {
-    isLoading: true,
-    articles: [],
-    view: ArticleView.SMALL
-}
-
 export const ListSmall = Template.bind({})
 ListSmall.args = {
     isLoading: false,
@@ -130,5 +115,19 @@ ListBig.args = {
             ...article,
             id: String(index)
         })),
+    view: ArticleView.BIG
+}
+
+export const isLoadingSmall = Template.bind({})
+isLoadingSmall.args = {
+    isLoading: true,
+    articles: [],
+    view: ArticleView.SMALL
+}
+
+export const isLoadingBig = Template.bind({})
+isLoadingBig.args = {
+    isLoading: true,
+    articles: [],
     view: ArticleView.BIG
 }

@@ -1,6 +1,6 @@
 import { memo, useMemo, useState } from 'react'
-import { ThemeSwitcher } from '@/features/ThemeSwitcher'
-import { LangSwitcher } from '@/features/LangSwitcher'
+import { ThemeSwitcher } from '@/features/themeSwitcher'
+import { LangSwitcher } from '@/features/langSwitcher'
 import { classNames } from '@/shared/lib/classNames/classNames'
 import { ToggleFeatures } from '@/shared/lib/features'
 import { Button, ButtonSize, ButtonTheme } from '@/shared/ui/deprecated/Button'

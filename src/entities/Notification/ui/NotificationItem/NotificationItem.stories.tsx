@@ -1,5 +1,6 @@
 import React from 'react'
 import { type ComponentMeta, type ComponentStory } from '@storybook/react'
+import { Notification } from '../../model/types/notification'
 import { NotificationItem } from './NotificationItem'
 
 export default {
@@ -12,21 +13,12 @@ export default {
 
 const Template: ComponentStory<typeof NotificationItem> = (args) => <NotificationItem {...args} />
 
-export const Normal = Template.bind({})
-Normal.args = {}
-Normal.parameters = {
-    mockData: [
-        {
-            url: `${API}/notifications`,
-            method: 'GET',
-            status: 200,
-            response: [
-                {
-                    id: '1',
-                    title: '123',
-                    description: 'abc'
-                }
-            ]
-        }
-    ]
+const item: Notification = {
+    id: '1',
+    title: 'Yandex',
+    description: 'link',
+    href: 'https://ya.ru/'
 }
+
+export const Normal = Template.bind({})
+Normal.args = { item }

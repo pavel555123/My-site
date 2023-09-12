@@ -1,12 +1,11 @@
 import React from 'react'
 import { type ComponentMeta, type ComponentStory } from '@storybook/react'
-
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator'
 import { Theme } from '@/shared/const/theme'
 import { AppLink, AppLinkTheme } from './AppLink'
 
 export default {
-    title: 'shared/Applink',
+    title: 'shared/deprecated/AppLink',
     component: AppLink,
     argTypes: {
         backgroundColor: { control: 'color' }
