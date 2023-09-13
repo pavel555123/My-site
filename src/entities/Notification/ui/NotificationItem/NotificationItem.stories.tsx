@@ -1,5 +1,6 @@
 import React from 'react'
 import { type ComponentMeta, type ComponentStory } from '@storybook/react'
+import { FeatureFlagsDecorator } from '@/shared/config/storybook/FeatureFlagsDecorator/FeatureFlagsDecorator'
 import { Notification } from '../../model/types/notification'
 import { NotificationItem } from './NotificationItem'
 
@@ -22,3 +23,7 @@ const item: Notification = {
 
 export const Normal = Template.bind({})
 Normal.args = { item }
+
+export const NormalRedesigned = Template.bind({})
+NormalRedesigned.args = { item }
+NormalRedesigned.decorators = [FeatureFlagsDecorator({ isAppRedesigned: true })]

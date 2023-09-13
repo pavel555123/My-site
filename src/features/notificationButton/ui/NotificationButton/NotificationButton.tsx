@@ -8,9 +8,9 @@ import { classNames } from '@/shared/lib/classNames/classNames'
 import { Button as ButtonDeprecated, ButtonTheme } from '@/shared/ui/deprecated/Button'
 import { Icon as IconDeprecated } from '@/shared/ui/deprecated/Icon'
 import { Popover as PopoverDeprecated } from '@/shared/ui/deprecated/Popups'
-import { ToggleFeatures } from '@/shared/lib/features'
 import { Icon } from '@/shared/ui/redesigned/Icon'
 import { Popover } from '@/shared/ui/redesigned/Popups'
+import { ToggleFeatures } from '@/shared/lib/features'
 import cls from './NotificationButton.module.scss'
 
 interface NotificationButtonProps {

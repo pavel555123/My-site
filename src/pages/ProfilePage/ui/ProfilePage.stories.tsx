@@ -6,6 +6,7 @@ import Avatar from '@/shared/assets/tests/rabbit.jpeg'
 import { Currency } from '@/entities/Currency'
 import { Country } from '@/entities/Country'
 import { Theme } from '@/shared/const/theme'
+import { FeatureFlagsDecorator } from '@/shared/config/storybook/FeatureFlagsDecorator/FeatureFlagsDecorator'
 import ProfilePage from './ProfilePage'
 
 export default {
@@ -18,40 +19,39 @@ export default {
 
 const Template: ComponentStory<typeof ProfilePage> = (args) => <ProfilePage {...args as typeof ProfilePage} />
 
-export const Normal = Template.bind({})
-Normal.args = {
-
+const form = {
+    first: 'Pavel',
+    lastname: 'Nikiforov',
+    age: 20,
+    city: 'Krasnoyarsk',
+    username: 'admin',
+    avatar: Avatar,
+    currency: Currency.RUB,
+    country: Country.Russia
 }
+
+export const Normal = Template.bind({})
+Normal.args = {}
 Normal.decorators = [StoreDecorator({
     profile: {
-        form: {
-            first: 'Pavel',
-            lastname: 'Nikiforov',
-            age: 20,
-            city: 'Krasnoyarsk',
-            username: 'admin',
-            avatar: Avatar,
-            currency: Currency.RUB,
-            country: Country.Russia
-        }
+        form
     }
 })]
 
-export const Dark = Template.bind({})
-Dark.args = {
+export const NormalRedesigned = Template.bind({})
+NormalRedesigned.args = {}
+NormalRedesigned.decorators = [
+    StoreDecorator({
+        profile: {
+            form
+        }
+    }),
+    FeatureFlagsDecorator({ isAppRedesigned: true })]
 
-}
+export const Dark = Template.bind({})
+Dark.args = {}
 Dark.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({
     profile: {
-        form: {
-            first: 'Pavel',
-            lastname: 'Nikiforov',
-            age: 20,
-            city: 'Krasnoyarsk',
-            username: 'admin',
-            avatar: Avatar,
-            currency: Currency.RUB,
-            country: Country.Russia
-        }
+        form
     }
 })]

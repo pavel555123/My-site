@@ -2,6 +2,7 @@ import React from 'react'
 import { type ComponentStory, type ComponentMeta } from '@storybook/react'
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator'
 import { type Article } from '@/entities/Article'
+import { FeatureFlagsDecorator } from '@/shared/config/storybook/FeatureFlagsDecorator/FeatureFlagsDecorator'
 import { ArticleRecommendationsList } from './ArticleRecommendationsList'
 
 export default {
@@ -26,12 +27,7 @@ const article: Article = {
     subtitle: 'hello'
 }
 
-export const Normal = Template.bind({})
-Normal.args = {
-
-}
-Normal.decorators = [StoreDecorator({})]
-Normal.parameters = {
+const normalParams = {
     mockData: [
         {
             url: `${API}/articles?_limit=3&_expand=user`,
@@ -45,3 +41,13 @@ Normal.parameters = {
         }
     ]
 }
+
+export const Normal = Template.bind({})
+Normal.args = {}
+Normal.decorators = [StoreDecorator({})]
+Normal.parameters = normalParams
+
+export const NormalRedesigned = Template.bind({})
+NormalRedesigned.args = {}
+NormalRedesigned.decorators = [StoreDecorator({}), FeatureFlagsDecorator({ isAppRedesigned: true })]
+NormalRedesigned.parameters = normalParams

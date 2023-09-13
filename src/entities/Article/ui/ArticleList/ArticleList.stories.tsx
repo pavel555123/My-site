@@ -1,5 +1,6 @@
 import React from 'react'
 import { type ComponentMeta, type ComponentStory } from '@storybook/react'
+import { FeatureFlagsDecorator } from '@/shared/config/storybook/FeatureFlagsDecorator/FeatureFlagsDecorator'
 import { type Article } from '../../model/types/article'
 import { ArticleView } from '../../model/consts/articleConsts'
 import { ArticleList } from './ArticleList'
@@ -94,27 +95,24 @@ const article = {
     ]
 } as Article
 
+const articles = new Array(9)
+    .fill(0)
+    .map((item, index) => ({
+        ...article,
+        id: String(index)
+    }))
+
 export const ListSmall = Template.bind({})
 ListSmall.args = {
     isLoading: false,
-    articles: new Array(9)
-        .fill(0)
-        .map((item, index) => ({
-            ...article,
-            id: String(index)
-        })),
+    articles,
     view: ArticleView.SMALL
 }
 
 export const ListBig = Template.bind({})
 ListBig.args = {
     isLoading: false,
-    articles: new Array(9)
-        .fill(0)
-        .map((item, index) => ({
-            ...article,
-            id: String(index)
-        })),
+    articles,
     view: ArticleView.BIG
 }
 
@@ -131,3 +129,35 @@ isLoadingBig.args = {
     articles: [],
     view: ArticleView.BIG
 }
+
+export const ListSmallRedesigned = Template.bind({})
+ListSmallRedesigned.args = {
+    isLoading: false,
+    articles,
+    view: ArticleView.SMALL
+}
+ListSmallRedesigned.decorators = [FeatureFlagsDecorator({ isAppRedesigned: true })]
+
+export const ListBigRedesigned = Template.bind({})
+ListBigRedesigned.args = {
+    isLoading: false,
+    articles,
+    view: ArticleView.BIG
+}
+ListBigRedesigned.decorators = [FeatureFlagsDecorator({ isAppRedesigned: true })]
+
+export const isLoadingSmallRedesigned = Template.bind({})
+isLoadingSmallRedesigned.args = {
+    isLoading: true,
+    articles: [],
+    view: ArticleView.SMALL
+}
+isLoadingSmallRedesigned.decorators = [FeatureFlagsDecorator({ isAppRedesigned: true })]
+
+export const isLoadingBigRedesigned = Template.bind({})
+isLoadingBigRedesigned.args = {
+    isLoading: true,
+    articles: [],
+    view: ArticleView.BIG
+}
+isLoadingBigRedesigned.decorators = [FeatureFlagsDecorator({ isAppRedesigned: true })]

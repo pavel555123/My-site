@@ -1,7 +1,7 @@
 import { memo, useCallback } from 'react'
 import { ListBox as ListBoxDeprecated } from '@/shared/ui/deprecated/Popups'
-import { ToggleFeatures } from '@/shared/lib/features'
 import { ListBox } from '@/shared/ui/redesigned/Popups'
+import { ToggleFeatures } from '@/shared/lib/features'
 import { Country } from '../../model/types/country'
 
 interface CountrySelectProps {

@@ -1,6 +1,7 @@
 import React from 'react'
 import { type ComponentMeta, type ComponentStory } from '@storybook/react'
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator'
+import { FeatureFlagsDecorator } from '@/shared/config/storybook/FeatureFlagsDecorator/FeatureFlagsDecorator'
 import { NotificationList } from './NotificationList'
 
 export default {
@@ -13,12 +14,7 @@ export default {
 
 const Template: ComponentStory<typeof NotificationList> = (args) => <NotificationList {...args} />
 
-export const Normal = Template.bind({})
-Normal.args = {
-
-}
-Normal.decorators = [StoreDecorator({})]
-Normal.parameters = {
+const normalParams = {
     mockData: [
         {
             url: `${API}/notifications`,
@@ -44,3 +40,13 @@ Normal.parameters = {
         }
     ]
 }
+
+export const Normal = Template.bind({})
+Normal.args = {}
+Normal.decorators = [StoreDecorator({})]
+Normal.parameters = normalParams
+
+export const NormalRedesigned = Template.bind({})
+NormalRedesigned.args = {}
+NormalRedesigned.decorators = [StoreDecorator({}), FeatureFlagsDecorator({ isAppRedesigned: true })]
+NormalRedesigned.parameters = normalParams

@@ -4,8 +4,11 @@ import { ArticleSortSelector } from '@/features/articleSortSelector'
 import { ArticleTypeTabs } from '@/features/articleTypeTabs'
 import { ArticleViewSelector } from '@/features/articleViewSelector'
 import { classNames } from '@/shared/lib/classNames/classNames'
-import { Input } from '@/shared/ui/deprecated/Input'
-import { Card } from '@/shared/ui/deprecated/Card'
+import { Input as InputDeprecated } from '@/shared/ui/deprecated/Input'
+import { Input } from '@/shared/ui/redesigned/Input'
+import { Card as CardDeprecated } from '@/shared/ui/deprecated/Card'
+import { Card } from '@/shared/ui/redesigned/Card'
+import { ToggleFeatures } from '@/shared/lib/features'
 import { useArticleFilters } from '../../lib/hooks/useArticleFilters'
 import cls from './ArticlesPageFilters.module.scss'
 
@@ -40,13 +43,27 @@ export const ArticlesPageFilters = memo(({ className }: ArticlesPageFiltersProps
                 />
                 <ArticleViewSelector view={view} onViewClick={onChangeView}/>
             </div>
-            <Card className={cls.search}>
-                <Input
-                    value={search}
-                    placeholder={t('Поиск')}
-                    onChange={onChangeSearch}
-                />
-            </Card>
+            <ToggleFeatures
+                feature={'isAppRedesigned'}
+                on={
+                    <Card className={cls.search}>
+                        <Input
+                            value={search}
+                            placeholder={t('Поиск')}
+                            onChange={onChangeSearch}
+                        />
+                    </Card>
+                }
+                off={
+                    <CardDeprecated className={cls.search}>
+                        <InputDeprecated
+                            value={search}
+                            placeholder={t('Поиск')}
+                            onChange={onChangeSearch}
+                        />
+                    </CardDeprecated>
+                }
+            />
             <ArticleTypeTabs
                 className={cls.tabs}
                 value={type}

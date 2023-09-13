@@ -1,5 +1,6 @@
 import React from 'react'
 import { type ComponentMeta, type ComponentStory } from '@storybook/react'
+import { FeatureFlagsDecorator } from '@/shared/config/storybook/FeatureFlagsDecorator/FeatureFlagsDecorator'
 import { type Article } from '../../model/types/article'
 import { ArticleView } from '../../model/consts/articleConsts'
 import { ArticleListItem } from './ArticleListItem'
@@ -105,3 +106,17 @@ Small.args = {
     view: ArticleView.SMALL,
     article
 }
+
+export const BigRedesigned = Template.bind({})
+BigRedesigned.args = {
+    view: ArticleView.BIG,
+    article
+}
+BigRedesigned.decorators = [FeatureFlagsDecorator({ isAppRedesigned: true })]
+
+export const SmallRedesigned = Template.bind({})
+SmallRedesigned.args = {
+    view: ArticleView.SMALL,
+    article
+}
+SmallRedesigned.decorators = [FeatureFlagsDecorator({ isAppRedesigned: true })]
