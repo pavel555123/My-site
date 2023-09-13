@@ -130,13 +130,13 @@ isLoadingBig.args = {
     view: ArticleView.BIG
 }
 
-export const ListSmallRedesigned = Template.bind({})
-ListSmallRedesigned.args = {
-    isLoading: false,
-    articles,
-    view: ArticleView.SMALL
-}
-ListSmallRedesigned.decorators = [FeatureFlagsDecorator({ isAppRedesigned: true })]
+// export const ListSmallRedesigned = Template.bind({})
+// ListSmallRedesigned.args = {
+//     isLoading: false,
+//     articles,
+//     view: ArticleView.SMALL
+// }
+// ListSmallRedesigned.decorators = [FeatureFlagsDecorator({ isAppRedesigned: true })]
 
 export const ListBigRedesigned = Template.bind({})
 ListBigRedesigned.args = {

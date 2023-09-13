@@ -40,16 +40,6 @@ Normal.parameters = {
     ]
 }
 
-export const Loading = Template.bind({})
-Loading.args = {
-    articleId: '1'
-}
-Loading.decorators = [
-    StoreDecorator({
-
-    })
-]
-
 export const WithoutRate = Template.bind({})
 WithoutRate.args = {
     articleId: '1'
