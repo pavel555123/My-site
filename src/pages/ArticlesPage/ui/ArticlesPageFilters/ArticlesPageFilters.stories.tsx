@@ -2,6 +2,7 @@ import React from 'react'
 import { type ComponentMeta, type ComponentStory } from '@storybook/react'
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator'
 import { type Article, ArticleType, ArticleBlockType } from '@/entities/Article'
+import { FeatureFlagsDecorator } from '@/shared/config/storybook/FeatureFlagsDecorator/FeatureFlagsDecorator'
 import { ArticlesPageFilters } from './ArticlesPageFilters'
 
 export default {
@@ -96,3 +97,14 @@ Normal.decorators = [StoreDecorator({
         data: article
     }
 })]
+
+export const NormalRedesigned = Template.bind({})
+NormalRedesigned.args = {}
+NormalRedesigned.decorators = [
+    StoreDecorator({
+        articleDetails: {
+            data: article
+        }
+    }),
+    FeatureFlagsDecorator({ isAppRedesigned: true })
+]

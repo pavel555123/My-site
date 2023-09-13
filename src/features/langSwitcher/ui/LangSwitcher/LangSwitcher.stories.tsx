@@ -15,13 +15,8 @@ export default {
 const Template: ComponentStory<typeof LangSwitcher> = (args) => <LangSwitcher {...args} />
 
 export const Normal = Template.bind({})
-Normal.args = {
-
-}
-Normal.decorators = [ThemeDecorator(Theme.LIGHT)]
+Normal.args = {}
 
 export const Dark = Template.bind({})
-Dark.args = {
-
-}
+Dark.args = {}
 Dark.decorators = [ThemeDecorator(Theme.DARK)]

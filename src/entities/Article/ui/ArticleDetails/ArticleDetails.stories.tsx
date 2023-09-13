@@ -1,5 +1,6 @@
 import React from 'react'
 import { type ComponentMeta, type ComponentStory } from '@storybook/react'
+import { FeatureFlagsDecorator } from '@/shared/config/storybook/FeatureFlagsDecorator/FeatureFlagsDecorator'
 import { StoreDecorator } from '../../../../shared/config/storybook/StoreDecorator/StoreDecorator'
 import { type Article } from '../../model/types/article'
 import { ArticleBlockType, ArticleType } from '../../model/consts/articleConsts'
@@ -112,3 +113,19 @@ Error.decorators = [StoreDecorator({
         error: 'error'
     }
 })]
+
+export const NormalRedesigned = Template.bind({})
+NormalRedesigned.args = {}
+NormalRedesigned.decorators = [StoreDecorator({
+    articleDetails: {
+        data: article
+    }
+}), FeatureFlagsDecorator({ isAppRedesigned: true })]
+
+export const LoadingRedesigned = Template.bind({})
+LoadingRedesigned.args = {}
+LoadingRedesigned.decorators = [StoreDecorator({
+    articleDetails: {
+        isLoading: true
+    }
+}), FeatureFlagsDecorator({ isAppRedesigned: true })]

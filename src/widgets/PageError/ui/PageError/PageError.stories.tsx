@@ -1,7 +1,6 @@
 import React from 'react'
 import { type ComponentMeta, type ComponentStory } from '@storybook/react'
-import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator'
-import { Theme } from '@/shared/const/theme'
+import { FeatureFlagsDecorator } from '@/shared/config/storybook/FeatureFlagsDecorator/FeatureFlagsDecorator'
 import { PageError } from './PageError'
 
 export default {
@@ -15,13 +14,8 @@ export default {
 const Template: ComponentStory<typeof PageError> = (args) => <PageError {...args} />
 
 export const Light = Template.bind({})
-Light.args = {
+Light.args = {}
 
-}
-Light.decorators = [ThemeDecorator(Theme.LIGHT)]
-
-export const Dark = Template.bind({})
-Dark.args = {
-
-}
-Dark.decorators = [ThemeDecorator(Theme.DARK)]
+export const LightRedesigned = Template.bind({})
+LightRedesigned.args = {}
+LightRedesigned.decorators = [FeatureFlagsDecorator({ isAppRedesigned: true })]

@@ -1,5 +1,6 @@
 import React from 'react'
 import { type ComponentMeta, type ComponentStory } from '@storybook/react'
+import { FeatureFlagsDecorator } from '@/shared/config/storybook/FeatureFlagsDecorator/FeatureFlagsDecorator'
 import { ArticleTypeTabs } from './ArticleTypeTabs'
 
 export default {
@@ -14,3 +15,7 @@ const Template: ComponentStory<typeof ArticleTypeTabs> = (args) => <ArticleTypeT
 
 export const Normal = Template.bind({})
 Normal.args = {}
+
+export const NormalRedesigned = Template.bind({})
+NormalRedesigned.args = {}
+NormalRedesigned.decorators = [FeatureFlagsDecorator({ isAppRedesigned: true })]

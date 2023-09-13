@@ -13,30 +13,24 @@ export default {
 
 const Template: ComponentStory<typeof CommentCard> = (args) => <CommentCard {...args} />
 
-const normalArgs = {
-    comment:
-        {
-            id: '1',
-            text: '123',
-            user: { id: '1', username: 'Pavel' }
-        }
+const comment = {
+
+    id: '1',
+    text: '123',
+    user: { id: '1', username: 'Pavel' }
+
 }
 
 export const Normal = Template.bind({})
-Normal.args = normalArgs
-
-export const NormalRedesigned = Template.bind({})
-NormalRedesigned.args = normalArgs
-NormalRedesigned.decorators = [FeatureFlagsDecorator({ isAppRedesigned: true })]
+Normal.args = { comment }
 
 export const Loading = Template.bind({})
-Loading.args = {
-    comment:
-        {
-            id: '1',
-            text: '123',
-            user: { id: '1', username: 'Pavel' }
+Loading.args = { comment, isLoading: true }
 
-        },
-    isLoading: true
-}
+export const NormalRedesigned = Template.bind({})
+NormalRedesigned.args = { comment }
+NormalRedesigned.decorators = [FeatureFlagsDecorator({ isAppRedesigned: true })]
+
+export const LoadingRedesigned = Template.bind({})
+LoadingRedesigned.args = { comment, isLoading: true }
+LoadingRedesigned.decorators = [FeatureFlagsDecorator({ isAppRedesigned: true })]
