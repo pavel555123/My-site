@@ -1,19 +1,17 @@
-import React from 'react'
-import { type ComponentMeta, type ComponentStory } from '@storybook/react'
+import { type Meta, type StoryObj } from '@storybook/react'
 import EyeIcon from '@/shared/assets/icons/eye-20-20.svg'
 import { Icon } from './Icon'
 
-export default {
+const meta: Meta<typeof Icon> = {
     title: 'shared/deprecated/Icon',
-    component: Icon,
-    argTypes: {
-        backgroundColor: { control: 'color' }
+    component: Icon
+}
+
+export default meta
+type Story = StoryObj<typeof Icon>
+
+export const Normal: Story = {
+    args: {
+        Svg: EyeIcon
     }
-} as ComponentMeta<typeof Icon>
-
-const Template: ComponentStory<typeof Icon> = (args) => <Icon {...args} />
-
-export const Normal = Template.bind({})
-Normal.args = {
-    Svg: EyeIcon
 }
