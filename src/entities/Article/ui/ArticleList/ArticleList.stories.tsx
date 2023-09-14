@@ -1,19 +1,16 @@
-import React from 'react'
-import { type ComponentMeta, type ComponentStory } from '@storybook/react'
+import { type Meta, type StoryObj } from '@storybook/react'
 import { FeatureFlagsDecorator } from '@/shared/config/storybook/FeatureFlagsDecorator/FeatureFlagsDecorator'
 import { type Article } from '../../model/types/article'
 import { ArticleView } from '../../model/consts/articleConsts'
 import { ArticleList } from './ArticleList'
 
-export default {
+const meta: Meta<typeof ArticleList> = {
     title: 'entities/Article/ArticleList',
-    component: ArticleList,
-    argTypes: {
-        backgroundColor: { control: 'color' }
-    }
-} as ComponentMeta<typeof ArticleList>
+    component: ArticleList
+}
 
-const Template: ComponentStory<typeof ArticleList> = (args) => <ArticleList {...args} />
+export default meta
+type Story = StoryObj<typeof ArticleList>
 
 const article = {
     id: '1',
@@ -102,62 +99,70 @@ const articles = new Array(9)
         id: String(index)
     }))
 
-export const ListSmall = Template.bind({})
-ListSmall.args = {
-    isLoading: false,
-    articles,
-    view: ArticleView.SMALL
+export const ListSmall: Story = {
+    args: {
+        isLoading: false,
+        articles,
+        view: ArticleView.SMALL
+    }
 }
 
-export const ListBig = Template.bind({})
-ListBig.args = {
-    isLoading: false,
-    articles,
-    view: ArticleView.BIG
+export const ListBig: Story = {
+    args: {
+        isLoading: false,
+        articles,
+        view: ArticleView.BIG
+    }
 }
 
-export const isLoadingSmall = Template.bind({})
-isLoadingSmall.args = {
-    isLoading: true,
-    articles: [],
-    view: ArticleView.SMALL
+export const IsLoadingSmall: Story = {
+    args: {
+        isLoading: true,
+        articles: [],
+        view: ArticleView.SMALL
+    }
 }
 
-export const isLoadingBig = Template.bind({})
-isLoadingBig.args = {
-    isLoading: true,
-    articles: [],
-    view: ArticleView.BIG
+export const IsLoadingBig: Story = {
+    args: {
+        isLoading: true,
+        articles: [],
+        view: ArticleView.BIG
+    }
 }
 
-// export const ListSmallRedesigned = Template.bind({})
-// ListSmallRedesigned.args = {
-//     isLoading: false,
-//     articles,
-//     view: ArticleView.SMALL
-// }
-// ListSmallRedesigned.decorators = [FeatureFlagsDecorator({ isAppRedesigned: true })]
-
-export const ListBigRedesigned = Template.bind({})
-ListBigRedesigned.args = {
-    isLoading: false,
-    articles,
-    view: ArticleView.BIG
+export const ListSmallRedesigned: Story = {
+    args: {
+        isLoading: false,
+        articles,
+        view: ArticleView.SMALL
+    },
+    decorators: [FeatureFlagsDecorator({ isAppRedesigned: true })]
 }
-ListBigRedesigned.decorators = [FeatureFlagsDecorator({ isAppRedesigned: true })]
 
-export const isLoadingSmallRedesigned = Template.bind({})
-isLoadingSmallRedesigned.args = {
-    isLoading: true,
-    articles: [],
-    view: ArticleView.SMALL
+export const ListBigRedesigned: Story = {
+    args: {
+        isLoading: false,
+        articles,
+        view: ArticleView.BIG
+    },
+    decorators: [FeatureFlagsDecorator({ isAppRedesigned: true })]
 }
-isLoadingSmallRedesigned.decorators = [FeatureFlagsDecorator({ isAppRedesigned: true })]
 
-export const isLoadingBigRedesigned = Template.bind({})
-isLoadingBigRedesigned.args = {
-    isLoading: true,
-    articles: [],
-    view: ArticleView.BIG
+export const IsLoadingSmallRedesigned: Story = {
+    args: {
+        isLoading: true,
+        articles: [],
+        view: ArticleView.SMALL
+    },
+    decorators: [FeatureFlagsDecorator({ isAppRedesigned: true })]
 }
-isLoadingBigRedesigned.decorators = [FeatureFlagsDecorator({ isAppRedesigned: true })]
+
+export const IsLoadingBigRedesigned: Story = {
+    args: {
+        isLoading: true,
+        articles: [],
+        view: ArticleView.BIG
+    },
+    decorators: [FeatureFlagsDecorator({ isAppRedesigned: true })]
+}

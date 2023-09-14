@@ -5,7 +5,7 @@ import { FeatureFlagsDecorator } from '@/shared/config/storybook/FeatureFlagsDec
 import ArticleRating from './ArticleRating'
 
 export default {
-    title: 'features/ArticleRating',
+    title: 'features/articleRating',
     component: ArticleRating,
     argTypes: {
         backgroundColor: { control: 'color' }

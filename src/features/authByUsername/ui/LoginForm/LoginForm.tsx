@@ -2,7 +2,6 @@ import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
 import { memo, useCallback } from 'react'
 import { classNames } from '@/shared/lib/classNames/classNames'
-import i18n from '@/shared/config/i18n/i18n'
 import {
     DynamicModuleLoader,
     type ReducerList
@@ -74,7 +73,7 @@ const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
                         <Text title={t('Форма авторизации')} />
                         {error && (
                             <Text
-                                text={i18n.t('Неверный логин или пароль')}
+                                text={t('Неверный логин или пароль')}
                                 variant='error'
                             />
                         )}
@@ -106,7 +105,7 @@ const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
                         <TextDeprecated title={t('Форма авторизации')} />
                         {error && (
                             <TextDeprecated
-                                text={i18n.t('Неверный логин или пароль')}
+                                text={t('Неверный логин или пароль')}
                                 theme={TextTheme.ERROR}
                             />
                         )}

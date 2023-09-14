@@ -4,12 +4,7 @@ module.exports = {
         es2021: true,
         jest: true
     },
-    extends: [
-        'standard-with-typescript',
-        'plugin:react/recommended',
-        'plugin:i18next/recommended',
-        'plugin:cypress/recommended'
-    ],
+    extends: ['standard-with-typescript', 'plugin:react/recommended', 'plugin:i18next/recommended', 'plugin:cypress/recommended', 'plugin:storybook/recommended'],
     parserOptions: {
         project: ['tsconfig.json', './cypress/tsconfig.json'],
         tsconfigRootDir: __dirname,

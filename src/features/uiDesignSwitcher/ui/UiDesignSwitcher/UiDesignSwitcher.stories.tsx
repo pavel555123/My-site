@@ -4,7 +4,7 @@ import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDe
 import { UiDesignSwitcher } from './UiDesignSwitcher'
 
 export default {
-    title: 'features/UiDesignSwitcher',
+    title: 'features/uiDesignSwitcher',
     component: UiDesignSwitcher,
     argTypes: {
         backgroundColor: { control: 'color' }

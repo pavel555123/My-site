@@ -3,7 +3,7 @@ import { type ComponentMeta, type ComponentStory } from '@storybook/react'
 import { ScrollToTopButton } from './ScrollToTopButton'
 
 export default {
-    title: 'features/ScrollToTopButton',
+    title: 'features/scrollToTopButton',
     component: ScrollToTopButton,
     argTypes: {
         backgroundColor: { control: 'color' }

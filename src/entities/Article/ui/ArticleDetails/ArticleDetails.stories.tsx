@@ -1,20 +1,29 @@
-import React from 'react'
-import { type ComponentMeta, type ComponentStory } from '@storybook/react'
-import { FeatureFlagsDecorator } from '@/shared/config/storybook/FeatureFlagsDecorator/FeatureFlagsDecorator'
+import { type Meta, type StoryObj } from '@storybook/react'
 import { StoreDecorator } from '../../../../shared/config/storybook/StoreDecorator/StoreDecorator'
 import { type Article } from '../../model/types/article'
 import { ArticleBlockType, ArticleType } from '../../model/consts/articleConsts'
 import { ArticleDetails } from './ArticleDetails'
 
-export default {
+const meta: Meta<typeof ArticleDetails> = {
     title: 'entities/Article/ArticleDetails',
-    component: ArticleDetails,
-    argTypes: {
-        backgroundColor: { control: 'color' }
-    }
-} as ComponentMeta<typeof ArticleDetails>
+    component: ArticleDetails
+    // argTypes: {
+    //     backgroundColor: { control: 'color' }
+    // }
+}
 
-const Template: ComponentStory<typeof ArticleDetails> = (args) => <ArticleDetails {...args} />
+export default meta
+type Story = StoryObj<typeof ArticleDetails>
+
+// export default {
+//     title: 'entities/Article/ArticleDetails',
+//     component: ArticleDetails,
+//     argTypes: {
+//         backgroundColor: { control: 'color' }
+//     }
+// } as Meta<typeof ArticleDetails>
+
+// const Template: StoryObj<typeof ArticleDetails> = (args) => <ArticleDetails {...args} />
 
 const article: Article = {
     id: '1',
@@ -90,42 +99,42 @@ const article: Article = {
     ]
 }
 
-export const Normal = Template.bind({})
-Normal.args = {}
-Normal.decorators = [StoreDecorator({
-    articleDetails: {
-        data: article
-    }
-})]
+export const Normal: Story = {
+    decorators: [StoreDecorator({
+        articleDetails: {
+            data: article
+        }
+    })]
+}
 
-export const Loading = Template.bind({})
-Loading.args = {}
-Loading.decorators = [StoreDecorator({
-    articleDetails: {
-        isLoading: true
-    }
-})]
-
-export const Error = Template.bind({})
-Error.args = {}
-Error.decorators = [StoreDecorator({
-    articleDetails: {
-        error: 'error'
-    }
-})]
-
-export const NormalRedesigned = Template.bind({})
-NormalRedesigned.args = {}
-NormalRedesigned.decorators = [StoreDecorator({
-    articleDetails: {
-        data: article
-    }
-}), FeatureFlagsDecorator({ isAppRedesigned: true })]
-
-export const LoadingRedesigned = Template.bind({})
-LoadingRedesigned.args = {}
-LoadingRedesigned.decorators = [StoreDecorator({
-    articleDetails: {
-        isLoading: true
-    }
-}), FeatureFlagsDecorator({ isAppRedesigned: true })]
+// export const Loading = Template.bind({})
+// Loading.args = {}
+// Loading.decorators = [StoreDecorator({
+//     articleDetails: {
+//         isLoading: true
+//     }
+// })]
+//
+// export const Error = Template.bind({})
+// Error.args = {}
+// Error.decorators = [StoreDecorator({
+//     articleDetails: {
+//         error: 'error'
+//     }
+// })]
+//
+// export const NormalRedesigned = Template.bind({})
+// NormalRedesigned.args = {}
+// NormalRedesigned.decorators = [StoreDecorator({
+//     articleDetails: {
+//         data: article
+//     }
+// }), FeatureFlagsDecorator({ isAppRedesigned: true })]
+//
+// export const LoadingRedesigned = Template.bind({})
+// LoadingRedesigned.args = {}
+// LoadingRedesigned.decorators = [StoreDecorator({
+//     articleDetails: {
+//         isLoading: true
+//     }
+// }), FeatureFlagsDecorator({ isAppRedesigned: true })]

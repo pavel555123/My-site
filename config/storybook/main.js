@@ -10,11 +10,12 @@ module.exports = {
                 backgrounds: false
             }
         },
+        '@storybook/addon-onboarding',
         '@storybook/addon-interactions',
         'storybook-addon-mock',
         'storybook-addon-themes'
     ],
-    framework: '@storybook/react',
+    framework: '@storybook/react-vite',
     core: {
         builder: '@storybook/builder-webpack5'
     },

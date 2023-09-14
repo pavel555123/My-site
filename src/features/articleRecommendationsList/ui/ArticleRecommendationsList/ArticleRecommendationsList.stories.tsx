@@ -6,7 +6,7 @@ import { FeatureFlagsDecorator } from '@/shared/config/storybook/FeatureFlagsDec
 import { ArticleRecommendationsList } from './ArticleRecommendationsList'
 
 export default {
-    title: 'features/ArticleRecommendationsList',
+    title: 'features/articleRecommendationsList',
     component: ArticleRecommendationsList,
     argTypes: {
         backgroundColor: { control: 'color' }
