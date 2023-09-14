@@ -1,4 +1,3 @@
-import React from 'react'
 import { type ComponentMeta, type ComponentStory } from '@storybook/react'
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator'
 import { Theme } from '@/shared/const/theme'
@@ -16,7 +15,7 @@ const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />
 
 export const Primary = Template.bind({})
 Primary.args = {
-    children: 'Text'
+    children: 'First'
 }
 
 export const Clear = Template.bind({})

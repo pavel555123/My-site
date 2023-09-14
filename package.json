@@ -24,11 +24,12 @@
     "test:ui:json": "node scripts/generate-visual-json-report.js",
     "test:ui:html": "reg-cli --from .loki/report.json --report .loki/report.html",
     "storybook": "storybook dev -p 6006 -c ./config/storybook",
-    "storybook:build": "storybook build -c ./config/storybook",
+    "build-storybook": "storybook build -c ./config/storybook",
     "prepare": "husky install",
     "generate:slice": "node ./scripts/createSlice/index.js",
     "postinstall": "node ./scripts/clear-cache.js",
-    "remove-feature": "ts-node ./scripts/remove-feature.ts"
+    "remove-feature": "ts-node ./scripts/remove-feature.ts",
+    "chromatic": "npx chromatic --project-token=chpt_55604a7d6da674d"
   },
   "lint-staged": {
     "**/*.{ts,tsx}": "eslint"
@@ -72,6 +73,7 @@
     "babel-jest": "^29.4.2",
     "babel-loader": "^9.1.2",
     "babel-plugin-i18next-extract": "^0.9.0",
+    "chromatic": "^7.1.0",
     "circular-dependency-plugin": "^5.2.2",
     "copy-webpack-plugin": "^11.0.0",
     "css-loader": "^6.7.3",
@@ -97,7 +99,6 @@
     "jest-html-reporters": "^3.1.4",
     "json-server": "^0.17.1",
     "lint-staged": "^13.2.3",
-    "loki": "^0.32.0",
     "mini-css-extract-plugin": "^2.7.2",
     "react-refresh": "^0.14.0",
     "react-test-renderer": "^18.2.0",
@@ -138,19 +139,6 @@
     "react-redux": "^8.1.2",
     "react-router-dom": "^6.8.0"
   },
-  "loki": {
-    "configurations": {
-      "chrome.laptop": {
-        "target": "chrome.docker",
-        "width": 1366,
-        "height": 768,
-        "deviceScaleFactor": 1,
-        "mobile": false
-      },
-      "chrome.iphone7": {
-        "target": "chrome.docker",
-        "preset": "iPhone 7"
-      }
-    }
-  }
+  "readme": "ERROR: No README data found!",
+  "_id": "big-project@1.0.0"
 }

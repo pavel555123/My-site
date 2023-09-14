@@ -7,23 +7,10 @@ import { ArticleDetails } from './ArticleDetails'
 const meta: Meta<typeof ArticleDetails> = {
     title: 'entities/Article/ArticleDetails',
     component: ArticleDetails
-    // argTypes: {
-    //     backgroundColor: { control: 'color' }
-    // }
 }
 
 export default meta
 type Story = StoryObj<typeof ArticleDetails>
-
-// export default {
-//     title: 'entities/Article/ArticleDetails',
-//     component: ArticleDetails,
-//     argTypes: {
-//         backgroundColor: { control: 'color' }
-//     }
-// } as Meta<typeof ArticleDetails>
-
-// const Template: StoryObj<typeof ArticleDetails> = (args) => <ArticleDetails {...args} />
 
 const article: Article = {
     id: '1',
@@ -107,14 +94,14 @@ export const Normal: Story = {
     })]
 }
 
-// export const Loading = Template.bind({})
-// Loading.args = {}
-// Loading.decorators = [StoreDecorator({
-//     articleDetails: {
-//         isLoading: true
-//     }
-// })]
-//
+export const Loading: Story = {
+    decorators: [StoreDecorator({
+        articleDetails: {
+            isLoading: true
+        }
+    })]
+}
+
 // export const Error = Template.bind({})
 // Error.args = {}
 // Error.decorators = [StoreDecorator({
