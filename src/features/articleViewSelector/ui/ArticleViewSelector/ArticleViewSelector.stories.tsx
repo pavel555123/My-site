@@ -1,21 +1,17 @@
-import React from 'react'
-import { ComponentStory, ComponentMeta } from '@storybook/react'
+import { Meta, StoryObj } from '@storybook/react'
 import { FeatureFlagsDecorator } from '@/shared/config/storybook/FeatureFlagsDecorator/FeatureFlagsDecorator'
 import { ArticleViewSelector } from './ArticleViewSelector'
 
-export default {
+const meta: Meta<typeof ArticleViewSelector> = {
     title: 'features/articleViewSelector',
-    component: ArticleViewSelector,
-    argTypes: {
-        backgroundColor: { control: 'color' }
-    }
-} as ComponentMeta<typeof ArticleViewSelector>
+    component: ArticleViewSelector
+}
 
-const Template: ComponentStory<typeof ArticleViewSelector> = (args) => <ArticleViewSelector {...args} />
+export default meta
+type Story = StoryObj<typeof ArticleViewSelector>
 
-export const Normal = Template.bind({})
-Normal.args = {}
+export const Normal: Story = {}
 
-export const NormalRedesigned = Template.bind({})
-NormalRedesigned.args = {}
-NormalRedesigned.decorators = [FeatureFlagsDecorator({ isAppRedesigned: true })]
+export const NormalRedesigned: Story = {
+    decorators: [FeatureFlagsDecorator({ isAppRedesigned: true })]
+}

@@ -13,31 +13,27 @@
 Пример:
 
 ```typescript jsx
-import React from 'react';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react'
+import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator'
+import { Theme } from '@/shared/const/theme'
+import { Button } from './Button'
 
-import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import { Button, ButtonSize, ButtonTheme } from './Button';
-import { Theme } from '@/shared/const/theme';
+const meta: Meta<typeof Button> = {
+    title: 'shared/redesigned/Button',
+    component: Button
+}
 
-export default {
-    title: 'shared/Button',
-    component: Button,
-    argTypes: {
-        backgroundColor: { control: 'color' },
-    },
-} as ComponentMeta<typeof Button>;
+export default meta
+type Story = StoryObj<typeof Button>
 
-const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />;
+export const Primary: Story = {
+    args: { children: 'Text' }
+}
 
-export const Primary = Template.bind({});
-Primary.args = {
-    children: 'Text',
-};
-
-export const Clear = Template.bind({});
-Clear.args = {
-    children: 'Text',
-    theme: ButtonTheme.CLEAR,
-};
+export const Clear: Story = {
+    args: {
+        children: 'Text',
+        variant: 'clear'
+    }
+}
 ```

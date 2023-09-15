@@ -1,18 +1,16 @@
-import React from 'react'
-import { type ComponentMeta, type ComponentStory } from '@storybook/react'
+import { Meta, StoryObj } from '@storybook/react'
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator'
 import { Page } from './Page'
 
-export default {
+const meta: Meta<typeof Page> = {
     title: 'widgets/Page',
-    component: Page,
-    argTypes: {
-        backgroundColor: { control: 'color' }
-    }
-} as ComponentMeta<typeof Page>
+    component: Page
+}
 
-const Template: ComponentStory<typeof Page> = (args) => <Page {...args} />
+export default meta
+type Story = StoryObj<typeof Page>
 
-export const Normal = Template.bind({})
-Normal.args = { children: <div>123</div> }
-Normal.decorators = [StoreDecorator({})]
+export const Normal: Story = {
+    args: { children: <div>123</div> },
+    decorators: [StoreDecorator({})]
+}

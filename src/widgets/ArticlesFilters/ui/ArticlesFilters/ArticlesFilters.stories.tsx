@@ -1,16 +1,12 @@
-import React from 'react'
-import { type ComponentMeta, type ComponentStory } from '@storybook/react'
+import { Meta, StoryObj } from '@storybook/react'
 import { ArticlesFilters } from './ArticlesFilters'
 
-export default {
+const meta: Meta<typeof ArticlesFilters> = {
     title: 'widgets/ArticlesFilters',
-    component: ArticlesFilters,
-    argTypes: {
-        backgroundColor: { control: 'color' }
-    }
-} as ComponentMeta<typeof ArticlesFilters>
+    component: ArticlesFilters
+}
 
-const Template: ComponentStory<typeof ArticlesFilters> = (args) => <ArticlesFilters {...args} />
+export default meta
+type Story = StoryObj<typeof ArticlesFilters>
 
-export const Normal = Template.bind({})
-Normal.args = {}
+export const Normal: Story = {}

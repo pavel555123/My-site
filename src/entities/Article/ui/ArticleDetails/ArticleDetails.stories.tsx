@@ -1,4 +1,5 @@
 import { type Meta, type StoryObj } from '@storybook/react'
+import { FeatureFlagsDecorator } from '@/shared/config/storybook/FeatureFlagsDecorator/FeatureFlagsDecorator'
 import { StoreDecorator } from '../../../../shared/config/storybook/StoreDecorator/StoreDecorator'
 import { type Article } from '../../model/types/article'
 import { ArticleBlockType, ArticleType } from '../../model/consts/articleConsts'
@@ -102,26 +103,26 @@ export const Loading: Story = {
     })]
 }
 
-// export const Error = Template.bind({})
-// Error.args = {}
-// Error.decorators = [StoreDecorator({
-//     articleDetails: {
-//         error: 'error'
-//     }
-// })]
-//
-// export const NormalRedesigned = Template.bind({})
-// NormalRedesigned.args = {}
-// NormalRedesigned.decorators = [StoreDecorator({
-//     articleDetails: {
-//         data: article
-//     }
-// }), FeatureFlagsDecorator({ isAppRedesigned: true })]
-//
-// export const LoadingRedesigned = Template.bind({})
-// LoadingRedesigned.args = {}
-// LoadingRedesigned.decorators = [StoreDecorator({
-//     articleDetails: {
-//         isLoading: true
-//     }
-// }), FeatureFlagsDecorator({ isAppRedesigned: true })]
+export const Error: Story = {
+    decorators: [StoreDecorator({
+        articleDetails: {
+            error: 'error'
+        }
+    })]
+}
+
+export const NormalRedesigned: Story = {
+    decorators: [StoreDecorator({
+        articleDetails: {
+            data: article
+        }
+    }), FeatureFlagsDecorator({ isAppRedesigned: true })]
+}
+
+export const LoadingRedesigned: Story = {
+    decorators: [StoreDecorator({
+        articleDetails: {
+            isLoading: true
+        }
+    }), FeatureFlagsDecorator({ isAppRedesigned: true })]
+}

@@ -1,21 +1,17 @@
-import React from 'react'
-import { type ComponentMeta, type ComponentStory } from '@storybook/react'
+import { Meta, StoryObj } from '@storybook/react'
 import { FeatureFlagsDecorator } from '@/shared/config/storybook/FeatureFlagsDecorator/FeatureFlagsDecorator'
 import { ArticleTypeTabs } from './ArticleTypeTabs'
 
-export default {
+const meta: Meta<typeof ArticleTypeTabs> = {
     title: 'features/articleTypeTabs',
-    component: ArticleTypeTabs,
-    argTypes: {
-        backgroundColor: { control: 'color' }
-    }
-} as ComponentMeta<typeof ArticleTypeTabs>
+    component: ArticleTypeTabs
+}
 
-const Template: ComponentStory<typeof ArticleTypeTabs> = (args) => <ArticleTypeTabs {...args} />
+export default meta
+type Story = StoryObj<typeof ArticleTypeTabs>
 
-export const Normal = Template.bind({})
-Normal.args = {}
+export const Normal: Story = {}
 
-export const NormalRedesigned = Template.bind({})
-NormalRedesigned.args = {}
-NormalRedesigned.decorators = [FeatureFlagsDecorator({ isAppRedesigned: true })]
+export const NormalRedesigned: Story = {
+    decorators: [FeatureFlagsDecorator({ isAppRedesigned: true })]
+}

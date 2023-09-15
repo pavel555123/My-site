@@ -1,5 +1,4 @@
-import React from 'react'
-import { type ComponentMeta, type ComponentStory } from '@storybook/react'
+import { Meta, StoryObj } from '@storybook/react'
 import { Country } from '@/entities/Country'
 import { Currency } from '@/entities/Currency'
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator'
@@ -8,15 +7,13 @@ import { Theme } from '@/shared/const/theme'
 import { NewDesignDecorator } from '@/shared/config/storybook/NewDesignDecorator/NewDesignDecorator'
 import { ProfileCard } from './ProfileCard'
 
-export default {
+const meta: Meta<typeof ProfileCard> = {
     title: 'entities/Profile/ProfileCard',
-    component: ProfileCard,
-    argTypes: {
-        backgroundColor: { control: 'color' }
-    }
-} as ComponentMeta<typeof ProfileCard>
+    component: ProfileCard
+}
 
-const Template: ComponentStory<typeof ProfileCard> = (args) => <ProfileCard {...args} />
+export default meta
+type Story = StoryObj<typeof ProfileCard>
 
 const primaryArgs = {
     data: {
@@ -31,28 +28,25 @@ const primaryArgs = {
     }
 }
 
-export const Primary = Template.bind({})
-Primary.args = primaryArgs
-
-export const PrimaryRedesigned = Template.bind({})
-PrimaryRedesigned.args = primaryArgs
-PrimaryRedesigned.decorators = [NewDesignDecorator]
-
-export const withError = Template.bind({})
-withError.args = {
-    error: 'true'
+export const Primary: Story = {
+    args: primaryArgs
 }
 
-export const Loading = Template.bind({})
-Loading.args = {
-    isLoading: true
+export const PrimaryRedesigned: Story = {
+    args: primaryArgs,
+    decorators: [NewDesignDecorator]
 }
 
-Loading.decorators = [ThemeDecorator(Theme.BLUE)]
-
-export const LoadingDark = Template.bind({})
-LoadingDark.args = {
-    isLoading: true
+export const WithError: Story = {
+    args: { error: 'true' }
 }
 
-LoadingDark.decorators = [ThemeDecorator(Theme.DARK)]
+export const Loading: Story = {
+    args: { isLoading: true },
+    decorators: [ThemeDecorator(Theme.BLUE)]
+}
+
+export const LoadingDark: Story = {
+    args: { isLoading: true },
+    decorators: [ThemeDecorator(Theme.DARK)]
+}

@@ -1,19 +1,17 @@
-import React from 'react'
-import { type ComponentMeta, type ComponentStory } from '@storybook/react'
+import { Meta, StoryObj } from '@storybook/react'
 import { Input } from './Input'
 
-export default {
+const meta: Meta<typeof Input> = {
     title: 'shared/redesigned/Input',
-    component: Input,
-    argTypes: {
-        backgroundColor: { control: 'color' }
+    component: Input
+}
+
+export default meta
+type Story = StoryObj<typeof Input>
+
+export const Primary: Story = {
+    args: {
+        placeholder: 'Text',
+        value: '123123'
     }
-} as ComponentMeta<typeof Input>
-
-const Template: ComponentStory<typeof Input> = (args) => <Input {...args} />
-
-export const Primary = Template.bind({})
-Primary.args = {
-    placeholder: 'Text',
-    value: '123123'
 }

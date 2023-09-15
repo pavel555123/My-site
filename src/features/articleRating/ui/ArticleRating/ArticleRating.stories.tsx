@@ -1,113 +1,84 @@
-import React from 'react'
-import { type ComponentMeta, type ComponentStory } from '@storybook/react'
+import { Meta, StoryObj } from '@storybook/react'
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator'
 import { FeatureFlagsDecorator } from '@/shared/config/storybook/FeatureFlagsDecorator/FeatureFlagsDecorator'
 import ArticleRating from './ArticleRating'
 
-export default {
+const meta: Meta<typeof ArticleRating> = {
     title: 'features/articleRating',
-    component: ArticleRating,
-    argTypes: {
-        backgroundColor: { control: 'color' }
+    component: ArticleRating
+}
+
+export default meta
+type Story = StoryObj<typeof ArticleRating>
+
+const data = [
+    {
+        url: `${API}/article-ratings?userId=1&articleId=1`,
+        method: 'GET',
+        status: 200,
+        response: [
+            {
+                rate: 3
+            }
+        ]
     }
-} as ComponentMeta<typeof ArticleRating>
-
-const Template: ComponentStory<typeof ArticleRating> = (args) => <ArticleRating {...args} />
-
-export const Normal = Template.bind({})
-Normal.args = {
-    articleId: '1'
-}
-Normal.decorators = [
-    StoreDecorator({
-        user: {
-            authData: { id: '1' }
-        }
-    })
 ]
-Normal.parameters = {
-    mockData: [
-        {
-            url: `${API}/article-ratings?userId=1&articleId=1`,
-            method: 'GET',
-            status: 200,
-            response: [
-                {
-                    rate: 4
-                }
-            ]
-        }
-    ]
+
+const dataWithoutRate = [
+    {
+        url: `${API}/article-ratings?userId=1&articleId=1`,
+        method: 'GET',
+        status: 200,
+        response: []
+    }
+]
+
+export const Normal: Story = {
+    args: { articleId: '1' },
+    decorators: [
+        StoreDecorator({
+            user: {
+                authData: { id: '1' }
+            }
+        })
+    ],
+    parameters: { mockData: data }
 }
 
-export const WithoutRate = Template.bind({})
-WithoutRate.args = {
-    articleId: '1'
-}
-WithoutRate.decorators = [
-    StoreDecorator({
-        user: {
-            authData: { id: '1' }
-        }
-    })
-]
-WithoutRate.parameters = {
-    mockData: [
-        {
-            url: `${API}/article-ratings?userId=1&articleId=1`,
-            method: 'GET',
-            status: 200,
-            response: []
-        }
-    ]
+export const WithoutRate: Story = {
+    args: { articleId: '1' },
+    decorators: [
+        StoreDecorator({
+            user: {
+                authData: { id: '1' }
+            }
+        })
+    ],
+    parameters: { mockData: dataWithoutRate }
 }
 
-export const NormalRedesigned = Template.bind({})
-NormalRedesigned.args = {
-    articleId: '1'
-}
-NormalRedesigned.decorators = [
-    StoreDecorator({
-        user: {
-            authData: { id: '1' }
-        }
-    }),
-    FeatureFlagsDecorator({ isAppRedesigned: true })
-]
-NormalRedesigned.parameters = {
-    mockData: [
-        {
-            url: `${API}/article-ratings?userId=1&articleId=1`,
-            method: 'GET',
-            status: 200,
-            response: [
-                {
-                    rate: 3
-                }
-            ]
-        }
-    ]
+export const NormalRedesigned: Story = {
+    args: { articleId: '1' },
+    decorators: [
+        StoreDecorator({
+            user: {
+                authData: { id: '1' }
+            }
+        }),
+        FeatureFlagsDecorator({ isAppRedesigned: true })
+    ],
+    parameters: { mockData: data }
 }
 
-export const WithoutRateRedesigned = Template.bind({})
-WithoutRateRedesigned.args = {
-    articleId: '1'
-}
-WithoutRateRedesigned.decorators = [
-    StoreDecorator({
-        user: {
-            authData: { id: '1' }
-        }
-    }),
-    FeatureFlagsDecorator({ isAppRedesigned: true })
-]
-WithoutRateRedesigned.parameters = {
-    mockData: [
-        {
-            url: `${API}/article-ratings?userId=1&articleId=1`,
-            method: 'GET',
-            status: 200,
-            response: []
-        }
-    ]
+export const WithoutRateRedesigned: Story = {
+    args: { articleId: '1' },
+    decorators: [
+        StoreDecorator({
+            user: {
+                authData: { id: '1' }
+            }
+        }),
+        FeatureFlagsDecorator({ isAppRedesigned: true })
+    ],
+    parameters: { mockData: dataWithoutRate }
 }

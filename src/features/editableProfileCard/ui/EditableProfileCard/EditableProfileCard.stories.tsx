@@ -1,23 +1,20 @@
-import React from 'react'
-import { type ComponentStory, type ComponentMeta } from '@storybook/react'
+import { Meta, StoryObj } from '@storybook/react'
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator'
 import { FeatureFlagsDecorator } from '@/shared/config/storybook/FeatureFlagsDecorator/FeatureFlagsDecorator'
 import { EditableProfileCard } from './EditableProfileCard'
 
-export default {
+const meta: Meta<typeof EditableProfileCard> = {
     title: 'features/editableProfileCard/EditableProfileCard',
-    component: EditableProfileCard,
-    argTypes: {
-        backgroundColor: { control: 'color' }
-    }
-} as ComponentMeta<typeof EditableProfileCard>
+    component: EditableProfileCard
+}
 
-const Template: ComponentStory<typeof EditableProfileCard> = (args) => <EditableProfileCard {...args} />
+export default meta
+type Story = StoryObj<typeof EditableProfileCard>
 
-export const Normal = Template.bind({})
-Normal.args = {}
-Normal.decorators = [StoreDecorator({})]
+export const Normal: Story = {
+    decorators: [StoreDecorator({})]
+}
 
-export const NormalRedesigned = Template.bind({})
-NormalRedesigned.args = {}
-NormalRedesigned.decorators = [StoreDecorator({}), FeatureFlagsDecorator({ isAppRedesigned: true })]
+export const NormalRedesigned: Story = {
+    decorators: [StoreDecorator({}), FeatureFlagsDecorator({ isAppRedesigned: true })]
+}

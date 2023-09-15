@@ -1,15 +1,15 @@
 
 > big-project@1.0.0 build-storybook
-> storybook build -c ./config/storybook --output-dir C:\Users\pavel\AppData\Local\Temp\chromatic--2384-OSwbmvh3f0TO
+> storybook build -c ./config/storybook --output-dir C:\Users\pavel\AppData\Local\Temp\chromatic--12532-8UnCE44MV90u
 
 @storybook/cli v7.4.1
 
-info => Cleaning outputDir: C:\Users\pavel\AppData\Local\Temp\chromatic--2384-OSwbmvh3f0TO
+info => Cleaning outputDir: C:\Users\pavel\AppData\Local\Temp\chromatic--12532-8UnCE44MV90u
 info => Loading presets
 info => Building manager..
-info => Manager built (2.03 s)
+info => Manager built (613 ms)
 info => Compiling preview..
-info => Copying static files: C:\Users\pavel\WebstormProjects\big-project\node_modules\@storybook\manager\static at C:\Users\pavel\AppData\Local\Temp\chromatic--2384-OSwbmvh3f0TO\sb-common-assets
+info => Copying static files: C:\Users\pavel\WebstormProjects\big-project\node_modules\@storybook\manager\static at C:\Users\pavel\AppData\Local\Temp\chromatic--12532-8UnCE44MV90u\sb-common-assets
 info Addon-docs: using MDX2
 info => Using implicit CSS loaders
 info => Loading custom Webpack config (full-control mode).
@@ -110,34 +110,31 @@ info => Loading custom Webpack config (full-control mode).
 <s> [webpack.Progress] 9% setup compilation
 <s> [webpack.Progress] 10% building
 <s> [webpack.Progress] 10% building 0/1 entries 0/0 dependencies 0/0 modules
-<s> [webpack.Progress] 19% building import loader ./node_modules/babel-loader/lib/index.js
-<s> [webpack.Progress] 19% building 0/1 entries 19/26 dependencies 3/17 modules
-<s> [webpack.Progress] 25% building 0/1 entries 28/39 dependencies 6/22 modules
-info => Copying static files: C:\Users\pavel\WebstormProjects\big-project\public at C:\Users\pavel\AppData\Local\Temp\chromatic--2384-OSwbmvh3f0TO\
-<s> [webpack.Progress] 14% building import loader ./node_modules/unplugin/dist/webpack/loaders/load.js
-<s> [webpack.Progress] 14% building 0/1 entries 138/212 dependencies 7/84 modules
-<s> [webpack.Progress] 17% building 0/1 entries 200/242 dependencies 17/118 modules
-<s> [webpack.Progress] 17% building 0/1 entries 240/242 dependencies 19/138 modules
-<s> [webpack.Progress] 20% building 0/1 entries 278/385 dependencies 29/156 modules
-<s> [webpack.Progress] 17% building 0/1 entries 590/618 dependencies 33/233 modules
-<s> [webpack.Progress] 20% building import loader ./node_modules/@svgr/webpack/dist/index.js
-<s> [webpack.Progress] 20% building 0/1 entries 635/645 dependencies 50/260 modules
-<s> [webpack.Progress] 18% building 0/1 entries 1000/1318 dependencies 59/380 modules
-<s> [webpack.Progress] 17% building import loader ./node_modules/style-loader/dist/cjs.js
-<s> [webpack.Progress] 17% building import loader ./node_modules/css-loader/dist/cjs.js
-<s> [webpack.Progress] 17% building import loader ./node_modules/sass-loader/dist/cjs.js
-<s> [webpack.Progress] 17% building 0/1 entries 1246/1318 dependencies 59/426 modules
-<s> [webpack.Progress] 17% building 0/1 entries 1554/1600 dependencies 72/510 modules
-<s> [webpack.Progress] 18% building 0/1 entries 1700/1712 dependencies 85/550 modules
-<s> [webpack.Progress] 21% building 0/1 entries 1856/1889 dependencies 121/600 modules
-<s> [webpack.Progress] 23% building 0/1 entries 1955/2000 dependencies 149/630 modules
-<s> [webpack.Progress] 23% building 0/1 entries 2100/2117 dependencies 157/663 modules
-<s> [webpack.Progress] 25% building 0/1 entries 2286/2354 dependencies 200/712 modules
-<s> [webpack.Progress] 34% building 0/1 entries 2486/2500 dependencies 356/803 modules
-<s> [webpack.Progress] 37% building 0/1 entries 2777/2800 dependencies 425/849 modules
-<s> [webpack.Progress] 40% building 0/1 entries 2947/3000 dependencies 486/886 modules
-<s> [webpack.Progress] 46% building 0/1 entries 3166/3254 dependencies 600/916 modules
-<s> [webpack.Progress] 61% building 0/1 entries 3640/3646 dependencies 1000/1074 modules
+<s> [webpack.Progress] 10% building import loader ./node_modules/babel-loader/lib/index.js
+<s> [webpack.Progress] 10% building 0/1 entries 22/26 dependencies 4/20 modules
+<s> [webpack.Progress] 10% building 0/1 entries 31/54 dependencies 6/23 modules
+info => Copying static files: C:\Users\pavel\WebstormProjects\big-project\public at C:\Users\pavel\AppData\Local\Temp\chromatic--12532-8UnCE44MV90u\
+<s> [webpack.Progress] 10% building import loader ./node_modules/unplugin/dist/webpack/loaders/load.js
+<s> [webpack.Progress] 10% building 0/1 entries 148/212 dependencies 7/93 modules
+<s> [webpack.Progress] 11% building 0/1 entries 200/262 dependencies 19/120 modules
+<s> [webpack.Progress] 11% building 0/1 entries 279/361 dependencies 35/153 modules
+<s> [webpack.Progress] 12% building 0/1 entries 588/625 dependencies 39/234 modules
+<s> [webpack.Progress] 13% building import loader ./node_modules/@svgr/webpack/dist/index.js
+<s> [webpack.Progress] 13% building 0/1 entries 636/650 dependencies 57/260 modules
+<s> [webpack.Progress] 13% building 0/1 entries 1000/1303 dependencies 59/369 modules
+<s> [webpack.Progress] 13% building import loader ./node_modules/style-loader/dist/cjs.js
+<s> [webpack.Progress] 13% building import loader ./node_modules/css-loader/dist/cjs.js
+<s> [webpack.Progress] 13% building import loader ./node_modules/sass-loader/dist/cjs.js
+<s> [webpack.Progress] 13% building 0/1 entries 1238/1303 dependencies 59/424 modules
+<s> [webpack.Progress] 14% building 0/1 entries 1600/1675 dependencies 78/526 modules
+<s> [webpack.Progress] 16% building 0/1 entries 1852/1882 dependencies 116/600 modules
+<s> [webpack.Progress] 17% building 0/1 entries 1900/1938 dependencies 131/614 modules
+<s> [webpack.Progress] 20% building 0/1 entries 2100/2145 dependencies 182/655 modules
+<s> [webpack.Progress] 26% building 0/1 entries 2344/2381 dependencies 300/716 modules
+<s> [webpack.Progress] 31% building 0/1 entries 2702/2754 dependencies 400/820 modules
+<s> [webpack.Progress] 34% building 0/1 entries 2827/2900 dependencies 438/871 modules
+<s> [webpack.Progress] 36% building 0/1 entries 2976/3000 dependencies 487/887 modules
+<s> [webpack.Progress] 44% building 0/1 entries 3241/3300 dependencies 623/940 modules
 <s> [webpack.Progress] 65% building 1/1 entries 3706/3706 dependencies 1097/1097 modules
 <s> [webpack.Progress] 65% building
 <s> [webpack.Progress] 69% building finish
@@ -241,8 +238,8 @@ info => Copying static files: C:\Users\pavel\WebstormProjects\big-project\public
 <s> [webpack.Progress] 92% sealing asset processing SourceMapDevToolPlugin
 <s> [webpack.Progress] 92% sealing asset processing SourceMapDevToolPlugin main.b51c2f63.iframe.bundle.js generate SourceMap
 <s> [webpack.Progress] 92% sealing asset processing SourceMapDevToolPlugin main.b51c2f63.iframe.bundle.js generated SourceMap
-<s> [webpack.Progress] 92% sealing asset processing SourceMapDevToolPlugin runtime~main.a447f787.iframe.bundle.js generate SourceMap
-<s> [webpack.Progress] 92% sealing asset processing SourceMapDevToolPlugin runtime~main.a447f787.iframe.bundle.js generated SourceMap
+<s> [webpack.Progress] 92% sealing asset processing SourceMapDevToolPlugin runtime~main.ae05534e.iframe.bundle.js generate SourceMap
+<s> [webpack.Progress] 92% sealing asset processing SourceMapDevToolPlugin runtime~main.ae05534e.iframe.bundle.js generated SourceMap
 <s> [webpack.Progress] 92% sealing asset processing SourceMapDevToolPlugin entities-Article-ui-ArticleDetails-ArticleDetails-stories.9b4700f0.iframe.bundle.js generate SourceMap
 <s> [webpack.Progress] 92% sealing asset processing SourceMapDevToolPlugin entities-Article-ui-ArticleDetails-ArticleDetails-stories.9b4700f0.iframe.bundle.js generated SourceMap
 <s> [webpack.Progress] 92% sealing asset processing SourceMapDevToolPlugin entities-Article-ui-ArticleList-ArticleList-stories.bb0dca2d.iframe.bundle.js generate SourceMap
@@ -351,8 +348,8 @@ info => Copying static files: C:\Users\pavel\WebstormProjects\big-project\public
 <s> [webpack.Progress] 92% sealing asset processing SourceMapDevToolPlugin shared-ui-redesigned-AppLogo-AppLogo-stories.66f7d837.iframe.bundle.js generated SourceMap
 <s> [webpack.Progress] 92% sealing asset processing SourceMapDevToolPlugin shared-ui-redesigned-Avatar-Avatar-stories.e42b5ef3.iframe.bundle.js generate SourceMap
 <s> [webpack.Progress] 92% sealing asset processing SourceMapDevToolPlugin shared-ui-redesigned-Avatar-Avatar-stories.e42b5ef3.iframe.bundle.js generated SourceMap
-<s> [webpack.Progress] 92% sealing asset processing SourceMapDevToolPlugin shared-ui-redesigned-Button-Button-stories.febc09ab.iframe.bundle.js generate SourceMap
-<s> [webpack.Progress] 92% sealing asset processing SourceMapDevToolPlugin shared-ui-redesigned-Button-Button-stories.febc09ab.iframe.bundle.js generated SourceMap
+<s> [webpack.Progress] 92% sealing asset processing SourceMapDevToolPlugin shared-ui-redesigned-Button-Button-stories.250b45ba.iframe.bundle.js generate SourceMap
+<s> [webpack.Progress] 92% sealing asset processing SourceMapDevToolPlugin shared-ui-redesigned-Button-Button-stories.250b45ba.iframe.bundle.js generated SourceMap
 <s> [webpack.Progress] 92% sealing asset processing SourceMapDevToolPlugin shared-ui-redesigned-Card-Card-stories.c8692a6c.iframe.bundle.js generate SourceMap
 <s> [webpack.Progress] 92% sealing asset processing SourceMapDevToolPlugin shared-ui-redesigned-Card-Card-stories.c8692a6c.iframe.bundle.js generated SourceMap
 <s> [webpack.Progress] 92% sealing asset processing SourceMapDevToolPlugin shared-ui-redesigned-Code-Code-stories.88f3710e.iframe.bundle.js generate SourceMap
@@ -707,7 +704,7 @@ info => Copying static files: C:\Users\pavel\WebstormProjects\big-project\public
 <s> [webpack.Progress] 99% cache begin idle
 <s> [webpack.Progress] 100% 
 
-info => Preview built (43 s)
+info => Preview built (32 s)
 WARN asset size limit: The following asset(s) exceed the recommended size limit (244 KiB).
 WARN This can impact web performance.
 WARN Assets: 
@@ -726,4 +723,4 @@ WARN
 <s> [webpack.Progress] 99% cache shutdown
 <s> [webpack.Progress] 100% 
 
-info => Output directory: C:\Users\pavel\AppData\Local\Temp\chromatic--2384-OSwbmvh3f0TO
+info => Output directory: C:\Users\pavel\AppData\Local\Temp\chromatic--12532-8UnCE44MV90u

@@ -1,22 +1,18 @@
-import React from 'react'
-import { type ComponentMeta, type ComponentStory } from '@storybook/react'
+import { Meta, StoryObj } from '@storybook/react'
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator'
 import { Theme } from '@/shared/const/theme'
 import { LangSwitcher } from './LangSwitcher'
 
-export default {
+const meta: Meta<typeof LangSwitcher> = {
     title: 'features/langSwitcher',
-    component: LangSwitcher,
-    argTypes: {
-        backgroundColor: { control: 'color' }
-    }
-} as ComponentMeta<typeof LangSwitcher>
+    component: LangSwitcher
+}
 
-const Template: ComponentStory<typeof LangSwitcher> = (args) => <LangSwitcher {...args} />
+export default meta
+type Story = StoryObj<typeof LangSwitcher>
 
-export const Normal = Template.bind({})
-Normal.args = {}
+export const Normal: Story = {}
 
-export const Dark = Template.bind({})
-Dark.args = {}
-Dark.decorators = [ThemeDecorator(Theme.DARK)]
+export const Dark: Story = {
+    decorators: [ThemeDecorator(Theme.DARK)]
+}

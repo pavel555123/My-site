@@ -1,76 +1,80 @@
-import { type ComponentMeta, type ComponentStory } from '@storybook/react'
+import { Meta, StoryObj } from '@storybook/react'
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator'
 import { Theme } from '@/shared/const/theme'
 import { Button } from './Button'
 
-export default {
+const meta: Meta<typeof Button> = {
     title: 'shared/redesigned/Button',
-    component: Button,
-    argTypes: {
-        backgroundColor: { control: 'color' }
+    component: Button
+}
+
+export default meta
+type Story = StoryObj<typeof Button>
+
+export const Primary: Story = {
+    args: { children: 'Text' }
+}
+
+export const Clear: Story = {
+    args: {
+        children: 'Text',
+        variant: 'clear'
     }
-} as ComponentMeta<typeof Button>
-
-const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />
-
-export const Primary = Template.bind({})
-Primary.args = {
-    children: 'First'
 }
 
-export const Clear = Template.bind({})
-Clear.args = {
-    children: 'Text',
-    variant: 'clear'
-}
-Clear.decorators = [ThemeDecorator(Theme.DARK)]
-
-export const Outline = Template.bind({})
-Outline.args = {
-    children: 'Text',
-    variant: 'outline'
+export const Outline: Story = {
+    args: {
+        children: 'Text',
+        variant: 'outline'
+    }
 }
 
-export const OutlineSizeL = Template.bind({})
-OutlineSizeL.args = {
-    children: 'Text',
-    variant: 'outline',
-    size: 'l'
+export const OutlineSizeL: Story = {
+    args: {
+        children: 'Text',
+        variant: 'outline',
+        size: 'l'
+    }
 }
 
-export const OutlineSizeXL = Template.bind({})
-OutlineSizeXL.args = {
-    children: 'Text',
-    variant: 'outline',
-    size: 'xl'
+export const OutlineSizeXL: Story = {
+    args: {
+        children: 'Text',
+        variant: 'outline',
+        size: 'xl'
+    }
 }
 
-export const OutlineDark = Template.bind({})
-OutlineDark.args = {
-    children: 'Text',
-    variant: 'outline'
-}
-OutlineDark.decorators = [ThemeDecorator(Theme.DARK)]
-
-export const Square = Template.bind({})
-Square.args = {
-    children: 'Text',
-    variant: 'filled',
-    square: true
+export const OutlineDark: Story = {
+    args: {
+        children: 'Text',
+        variant: 'outline'
+    },
+    decorators: [ThemeDecorator(Theme.DARK)]
 }
 
-export const SquareSizeL = Template.bind({})
-SquareSizeL.args = {
-    children: 'Text',
-    variant: 'filled',
-    square: true,
-    size: 'l'
+export const Square: Story = {
+    args: {
+        children: 'Text',
+        variant: 'filled',
+        square: true
+    }
 }
 
-export const SquareSizeXL = Template.bind({})
-SquareSizeXL.args = {
-    children: 'Text',
-    variant: 'filled',
-    square: true,
-    size: 'xl'
+export const SquareSizeL: Story = {
+    args: {
+        children: 'Text',
+        variant: 'filled',
+        square: true,
+        size: 'l'
+    }
+}
+
+export const SquareSizeXL: Story = {
+    args: {
+        children: 'Text',
+        variant: 'filled',
+        square: true,
+        size: 'xl'
+    }
 }

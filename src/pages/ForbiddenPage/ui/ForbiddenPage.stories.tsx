@@ -1,28 +1,21 @@
-import React from 'react'
-import { type ComponentMeta, type ComponentStory } from '@storybook/react'
+import { Meta, StoryObj } from '@storybook/react'
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator'
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator'
 import { Theme } from '@/shared/const/theme'
 import ForbiddenPage from './ForbiddenPage'
 
-export default {
+const meta: Meta<typeof ForbiddenPage> = {
     title: 'pages/ForbiddenPage',
-    component: ForbiddenPage,
-    argTypes: {
-        backgroundColor: { control: 'color' }
-    }
-} as ComponentMeta<typeof ForbiddenPage>
-
-const Template: ComponentStory<typeof ForbiddenPage> = () => <ForbiddenPage/>
-
-export const Normal = Template.bind({})
-Normal.args = {
-
+    component: ForbiddenPage
 }
-Normal.decorators = [ThemeDecorator(Theme.LIGHT), StoreDecorator({})]
 
-export const Dark = Template.bind({})
-Dark.args = {
+export default meta
+type Story = StoryObj<typeof ForbiddenPage>
 
+export const Normal: Story = {
+    decorators: [ThemeDecorator(Theme.LIGHT), StoreDecorator({})]
 }
-Dark.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({})]
+
+export const Dark: Story = {
+    decorators: [ThemeDecorator(Theme.DARK), StoreDecorator({})]
+}

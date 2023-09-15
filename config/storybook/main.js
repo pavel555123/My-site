@@ -10,7 +10,6 @@ module.exports = {
                 backgrounds: false
             }
         },
-        '@storybook/addon-onboarding',
         '@storybook/addon-interactions',
         'storybook-addon-mock',
         'storybook-addon-themes'

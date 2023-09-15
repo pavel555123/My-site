@@ -1,18 +1,15 @@
-import React from 'react'
-import { type ComponentMeta, type ComponentStory } from '@storybook/react'
+import { Meta, StoryObj } from '@storybook/react'
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator'
 import { UiDesignSwitcher } from './UiDesignSwitcher'
 
-export default {
+const meta: Meta<typeof UiDesignSwitcher> = {
     title: 'features/uiDesignSwitcher',
-    component: UiDesignSwitcher,
-    argTypes: {
-        backgroundColor: { control: 'color' }
-    }
-} as ComponentMeta<typeof UiDesignSwitcher>
+    component: UiDesignSwitcher
+}
 
-const Template: ComponentStory<typeof UiDesignSwitcher> = (args) => <UiDesignSwitcher {...args} />
+export default meta
+type Story = StoryObj<typeof UiDesignSwitcher>
 
-export const Normal = Template.bind({})
-Normal.args = {}
-Normal.decorators = [StoreDecorator({})]
+export const Normal: Story = {
+    decorators: [StoreDecorator({})]
+}

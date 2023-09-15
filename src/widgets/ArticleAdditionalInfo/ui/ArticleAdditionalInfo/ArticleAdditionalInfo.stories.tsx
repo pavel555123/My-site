@@ -1,17 +1,14 @@
-import React from 'react'
-import { type ComponentMeta, type ComponentStory } from '@storybook/react'
+import { Meta, StoryObj } from '@storybook/react'
 import { User } from '@/entities/User'
 import { ArticleAdditionalInfo } from './ArticleAdditionalInfo'
 
-export default {
+const meta: Meta<typeof ArticleAdditionalInfo> = {
     title: 'widgets/ArticleAdditionalInfo',
-    component: ArticleAdditionalInfo,
-    argTypes: {
-        backgroundColor: { control: 'color' }
-    }
-} as ComponentMeta<typeof ArticleAdditionalInfo>
+    component: ArticleAdditionalInfo
+}
 
-const Template: ComponentStory<typeof ArticleAdditionalInfo> = (args) => <ArticleAdditionalInfo {...args} />
+export default meta
+type Story = StoryObj<typeof ArticleAdditionalInfo>
 
 const author: User = {
     id: '1',
@@ -19,5 +16,10 @@ const author: User = {
     avatar: 'https://w.forfun.com/fetch/b7/b77ae3f6f1afd7a4ed41fa4be58015a6.jpeg'
 }
 
-export const Normal = Template.bind({})
-Normal.args = { views: 100, author, createdAt: '10.10.2023' }
+export const Normal: Story = {
+    args: {
+        views: 100,
+        author,
+        createdAt: '10.10.2023'
+    }
+}

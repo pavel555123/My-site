@@ -1,18 +1,15 @@
-import React from 'react'
-import { type ComponentMeta, type ComponentStory } from '@storybook/react'
+import { Meta, StoryObj } from '@storybook/react'
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator'
 import { FeatureFlagsDecorator } from '@/shared/config/storybook/FeatureFlagsDecorator/FeatureFlagsDecorator'
 import { NotificationList } from './NotificationList'
 
-export default {
+const meta: Meta<typeof NotificationList> = {
     title: 'entities/Notification/NotificationList',
-    component: NotificationList,
-    argTypes: {
-        backgroundColor: { control: 'color' }
-    }
-} as ComponentMeta<typeof NotificationList>
+    component: NotificationList
+}
 
-const Template: ComponentStory<typeof NotificationList> = (args) => <NotificationList {...args} />
+export default meta
+type Story = StoryObj<typeof NotificationList>
 
 const normalParams = {
     mockData: [
@@ -41,12 +38,12 @@ const normalParams = {
     ]
 }
 
-export const Normal = Template.bind({})
-Normal.args = {}
-Normal.decorators = [StoreDecorator({})]
-Normal.parameters = normalParams
+export const Normal: Story = {
+    decorators: [StoreDecorator({})],
+    parameters: normalParams
+}
 
-export const NormalRedesigned = Template.bind({})
-NormalRedesigned.args = {}
-NormalRedesigned.decorators = [StoreDecorator({}), FeatureFlagsDecorator({ isAppRedesigned: true })]
-NormalRedesigned.parameters = normalParams
+export const NormalRedesigned: Story = {
+    decorators: [StoreDecorator({}), FeatureFlagsDecorator({ isAppRedesigned: true })],
+    parameters: normalParams
+}

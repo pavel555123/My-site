@@ -1,19 +1,16 @@
-import React from 'react'
-import { type ComponentMeta, type ComponentStory } from '@storybook/react'
+import { Meta, StoryObj } from '@storybook/react'
 import { FeatureFlagsDecorator } from '@/shared/config/storybook/FeatureFlagsDecorator/FeatureFlagsDecorator'
 import { type Article } from '../../model/types/article'
 import { ArticleView } from '../../model/consts/articleConsts'
 import { ArticleListItem } from './ArticleListItem'
 
-export default {
+const meta: Meta<typeof ArticleListItem> = {
     title: 'entities/Article/ArticleListItem',
-    component: ArticleListItem,
-    argTypes: {
-        backgroundColor: { control: 'color' }
-    }
-} as ComponentMeta<typeof ArticleListItem>
+    component: ArticleListItem
+}
 
-const Template: ComponentStory<typeof ArticleListItem> = (args) => <ArticleListItem {...args} />
+export default meta
+type Story = StoryObj<typeof ArticleListItem>
 
 const article = {
     id: '1',
@@ -95,28 +92,32 @@ const article = {
     ]
 } as Article
 
-export const Big = Template.bind({})
-Big.args = {
-    view: ArticleView.BIG,
-    article
+export const Big: Story = {
+    args: {
+        view: ArticleView.BIG,
+        article
+    }
 }
 
-export const Small = Template.bind({})
-Small.args = {
-    view: ArticleView.SMALL,
-    article
+export const Small: Story = {
+    args: {
+        view: ArticleView.SMALL,
+        article
+    }
 }
 
-export const BigRedesigned = Template.bind({})
-BigRedesigned.args = {
-    view: ArticleView.BIG,
-    article
+export const BigRedesigned: Story = {
+    args: {
+        view: ArticleView.BIG,
+        article
+    },
+    decorators: [FeatureFlagsDecorator({ isAppRedesigned: true })]
 }
-BigRedesigned.decorators = [FeatureFlagsDecorator({ isAppRedesigned: true })]
 
-export const SmallRedesigned = Template.bind({})
-SmallRedesigned.args = {
-    view: ArticleView.SMALL,
-    article
+export const SmallRedesigned: Story = {
+    args: {
+        view: ArticleView.SMALL,
+        article
+    },
+    decorators: [FeatureFlagsDecorator({ isAppRedesigned: true })]
 }
-SmallRedesigned.decorators = [FeatureFlagsDecorator({ isAppRedesigned: true })]

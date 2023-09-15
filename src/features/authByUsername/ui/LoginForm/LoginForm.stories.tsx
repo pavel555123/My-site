@@ -1,42 +1,39 @@
-import React from 'react'
-import { type ComponentMeta, type ComponentStory } from '@storybook/react'
+import { Meta, StoryObj } from '@storybook/react'
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator'
 import { FeatureFlagsDecorator } from '@/shared/config/storybook/FeatureFlagsDecorator/FeatureFlagsDecorator'
 import LoginForm from './LoginForm'
 
-export default {
+const meta: Meta<typeof LoginForm> = {
     title: 'features/LoginForm',
-    component: LoginForm,
-    argTypes: {
-        backgroundColor: { control: 'color' }
-    }
-} as ComponentMeta<typeof LoginForm>
+    component: LoginForm
+}
 
-const Template: ComponentStory<typeof LoginForm> = (args) => <LoginForm {...args} />
+export default meta
+type Story = StoryObj<typeof LoginForm>
 
-export const Primary = Template.bind({})
-Primary.args = {}
-Primary.decorators = [StoreDecorator({
-    loginForm: { username: '123', password: 'aaa' }
-})]
-
-export const PrimaryRedesigned = Template.bind({})
-PrimaryRedesigned.args = {}
-PrimaryRedesigned.decorators = [
-    StoreDecorator({
+export const Primary: Story = {
+    decorators: [StoreDecorator({
         loginForm: { username: '123', password: 'aaa' }
-    }),
-    FeatureFlagsDecorator({ isAppRedesigned: true })
-]
+    })]
+}
 
-export const Loading = Template.bind({})
-Loading.args = {}
-Loading.decorators = [StoreDecorator({
-    loginForm: { isLoading: true }
-})]
+export const PrimaryRedesigned: Story = {
+    decorators: [
+        StoreDecorator({
+            loginForm: { username: '123', password: 'aaa' }
+        }),
+        FeatureFlagsDecorator({ isAppRedesigned: true })
+    ]
+}
 
-export const withError = Template.bind({})
-withError.args = {}
-withError.decorators = [StoreDecorator({
-    loginForm: { username: '123', password: 'aaa', error: 'ERROR' }
-})]
+export const Loading: Story = {
+    decorators: [StoreDecorator({
+        loginForm: { isLoading: true }
+    })]
+}
+
+export const WithError: Story = {
+    decorators: [StoreDecorator({
+        loginForm: { username: '123', password: 'aaa', error: 'ERROR' }
+    })]
+}

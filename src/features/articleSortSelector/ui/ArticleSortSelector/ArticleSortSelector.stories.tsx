@@ -1,21 +1,17 @@
-import React from 'react'
-import { ComponentMeta, ComponentStory } from '@storybook/react'
+import { Meta, StoryObj } from '@storybook/react'
 import { FeatureFlagsDecorator } from '@/shared/config/storybook/FeatureFlagsDecorator/FeatureFlagsDecorator'
 import { ArticleSortSelector } from './ArticleSortSelector'
 
-export default {
+const meta: Meta<typeof ArticleSortSelector> = {
     title: 'features/articleSortSelector',
-    component: ArticleSortSelector,
-    argTypes: {
-        backgroundColor: { control: 'color' }
-    }
-} as ComponentMeta<typeof ArticleSortSelector>
+    component: ArticleSortSelector
+}
 
-const Template: ComponentStory<typeof ArticleSortSelector> = (args) => <ArticleSortSelector {...args} />
+export default meta
+type Story = StoryObj<typeof ArticleSortSelector>
 
-export const Normal = Template.bind({})
-Normal.args = {}
+export const Normal: Story = {}
 
-export const NormalRedesigned = Template.bind({})
-NormalRedesigned.args = {}
-NormalRedesigned.decorators = [FeatureFlagsDecorator({ isAppRedesigned: true })]
+export const NormalRedesigned: Story = {
+    decorators: [FeatureFlagsDecorator({ isAppRedesigned: true })]
+}

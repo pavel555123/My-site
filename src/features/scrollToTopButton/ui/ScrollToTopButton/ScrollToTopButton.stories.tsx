@@ -1,16 +1,12 @@
-import React from 'react'
-import { type ComponentMeta, type ComponentStory } from '@storybook/react'
+import { Meta, StoryObj } from '@storybook/react'
 import { ScrollToTopButton } from './ScrollToTopButton'
 
-export default {
+const meta: Meta<typeof ScrollToTopButton> = {
     title: 'features/scrollToTopButton',
-    component: ScrollToTopButton,
-    argTypes: {
-        backgroundColor: { control: 'color' }
-    }
-} as ComponentMeta<typeof ScrollToTopButton>
+    component: ScrollToTopButton
+}
 
-const Template: ComponentStory<typeof ScrollToTopButton> = (args) => <ScrollToTopButton {...args} />
+export default meta
+type Story = StoryObj<typeof ScrollToTopButton>
 
-export const Normal = Template.bind({})
-Normal.args = {}
+export const Normal: Story = {}

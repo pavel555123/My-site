@@ -1,30 +1,23 @@
-import React from 'react'
-import { type ComponentMeta, type ComponentStory } from '@storybook/react'
+import { Meta, StoryObj } from '@storybook/react'
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator'
 import { Theme } from '@/shared/const/theme'
 import { FeatureFlagsDecorator } from '@/shared/config/storybook/FeatureFlagsDecorator/FeatureFlagsDecorator'
 import { CountrySelect } from './CountrySelect'
 
-export default {
+const meta: Meta<typeof CountrySelect> = {
     title: 'entities/CountrySelect',
-    component: CountrySelect,
-    argTypes: {
-        backgroundColor: { control: 'color' }
-    },
-    args: {
-        to: '/'
-    }
-} as ComponentMeta<typeof CountrySelect>
+    component: CountrySelect
+}
 
-const Template: ComponentStory<typeof CountrySelect> = (args) => <CountrySelect {...args} />
+export default meta
+type Story = StoryObj<typeof CountrySelect>
 
-export const Primary = Template.bind({})
-Primary.args = {}
+export const Primary: Story = {}
 
-export const PrimaryDark = Template.bind({})
-PrimaryDark.args = {}
-PrimaryDark.decorators = [ThemeDecorator(Theme.DARK)]
+export const PrimaryDark: Story = {
+    decorators: [ThemeDecorator(Theme.DARK)]
+}
 
-export const PrimaryRedesigned = Template.bind({})
-PrimaryRedesigned.args = {}
-PrimaryRedesigned.decorators = [FeatureFlagsDecorator({ isAppRedesigned: true })]
+export const PrimaryRedesigned: Story = {
+    decorators: [FeatureFlagsDecorator({ isAppRedesigned: true })]
+}

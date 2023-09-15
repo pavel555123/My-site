@@ -1,21 +1,17 @@
-import React from 'react'
-import { type ComponentMeta, type ComponentStory } from '@storybook/react'
+import { Meta, StoryObj } from '@storybook/react'
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator'
-import { type Article, ArticleType, ArticleBlockType } from '@/entities/Article'
+import { type Article, ArticleBlockType, ArticleType } from '@/entities/Article'
 import ArticleEditPage from './ArticleEditPage'
 
-export default {
+const meta: Meta<typeof ArticleEditPage> = {
     title: 'pages/ArticleEditPage',
-    component: ArticleEditPage,
-    argTypes: {
-        backgroundColor: { control: 'color' }
-    }
-} as ComponentMeta<typeof ArticleEditPage>
+    component: ArticleEditPage
+}
 
-const Template: ComponentStory<typeof ArticleEditPage> = (args) => <ArticleEditPage {...args} />
+export default meta
+type Story = StoryObj<typeof ArticleEditPage>
 
 const article: Article = {
-
     id: '1',
     title: 'Javascript news',
     subtitle: 'Что нового в JS за 2022 год?',
@@ -89,10 +85,10 @@ const article: Article = {
     ]
 }
 
-export const Normal = Template.bind({})
-Normal.args = {}
-Normal.decorators = [StoreDecorator({
-    articleDetails: {
-        data: article
-    }
-})]
+export const Normal: Story = {
+    decorators: [StoreDecorator({
+        articleDetails: {
+            data: article
+        }
+    })]
+}

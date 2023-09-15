@@ -11,7 +11,5 @@ export default meta
 type Story = StoryObj<typeof Icon>
 
 export const Normal: Story = {
-    args: {
-        Svg: EyeIcon
-    }
+    args: { Svg: EyeIcon }
 }

@@ -1,28 +1,27 @@
-import React from 'react'
-import { type ComponentMeta, type ComponentStory } from '@storybook/react'
+import { Meta, StoryObj } from '@storybook/react'
 import { action } from '@storybook/addon-actions'
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator'
 import { FeatureFlagsDecorator } from '@/shared/config/storybook/FeatureFlagsDecorator/FeatureFlagsDecorator'
 import AddCommentForm from './AddCommentForm'
 
-export default {
+const meta: Meta<typeof AddCommentForm> = {
     title: 'features/addCommentForm',
-    component: AddCommentForm,
-    argTypes: {
-        backgroundColor: { control: 'color' }
-    }
-} as ComponentMeta<typeof AddCommentForm>
-
-const Template: ComponentStory<typeof AddCommentForm> = (args) => <AddCommentForm {...args} />
-
-export const Normal = Template.bind({})
-Normal.args = {
-    onSendComment: action('onSendComment')
+    component: AddCommentForm
 }
-Normal.decorators = [StoreDecorator({})]
 
-export const NormalRedesigned = Template.bind({})
-NormalRedesigned.args = {
-    onSendComment: action('onSendComment')
+export default meta
+type Story = StoryObj<typeof AddCommentForm>
+
+export const Normal: Story = {
+    args: {
+        onSendComment: action('onSendComment')
+    },
+    decorators: [StoreDecorator({})]
 }
-NormalRedesigned.decorators = [StoreDecorator({}), FeatureFlagsDecorator({ isAppRedesigned: true })]
+
+export const NormalRedesigned: Story = {
+    args: {
+        onSendComment: action('onSendComment')
+    },
+    decorators: [StoreDecorator({}), FeatureFlagsDecorator({ isAppRedesigned: true })]
+}

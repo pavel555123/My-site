@@ -1,21 +1,17 @@
-import React from 'react'
-import { type ComponentMeta, type ComponentStory } from '@storybook/react'
+import { Meta, StoryObj } from '@storybook/react'
 import { FeatureFlagsDecorator } from '@/shared/config/storybook/FeatureFlagsDecorator/FeatureFlagsDecorator'
 import { RatingCard } from './RatingCard'
 
-export default {
+const meta: Meta<typeof RatingCard> = {
     title: 'entities/Rating/RatingCard',
-    component: RatingCard,
-    argTypes: {
-        backgroundColor: { control: 'color' }
-    }
-} as ComponentMeta<typeof RatingCard>
+    component: RatingCard
+}
 
-const Template: ComponentStory<typeof RatingCard> = (args) => <RatingCard {...args} />
+export default meta
+type Story = StoryObj<typeof RatingCard>
 
-export const Normal = Template.bind({})
-Normal.args = {}
+export const Normal: Story = {}
 
-export const NormalRedesigned = Template.bind({})
-NormalRedesigned.args = {}
-NormalRedesigned.decorators = [FeatureFlagsDecorator({ isAppRedesigned: true })]
+export const NormalRedesigned: Story = {
+    decorators: [FeatureFlagsDecorator({ isAppRedesigned: true })]
+}

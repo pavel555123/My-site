@@ -1,21 +1,17 @@
-import React from 'react'
-import { type ComponentMeta, type ComponentStory } from '@storybook/react'
+import { Meta, StoryObj } from '@storybook/react'
 import { FeatureFlagsDecorator } from '@/shared/config/storybook/FeatureFlagsDecorator/FeatureFlagsDecorator'
 import { PageError } from './PageError'
 
-export default {
+const meta: Meta<typeof PageError> = {
     title: 'widgets/PageError',
-    component: PageError,
-    argTypes: {
-        backgroundColor: { control: 'color' }
-    }
-} as ComponentMeta<typeof PageError>
+    component: PageError
+}
 
-const Template: ComponentStory<typeof PageError> = (args) => <PageError {...args} />
+export default meta
+type Story = StoryObj<typeof PageError>
 
-export const Light = Template.bind({})
-Light.args = {}
+export const Light: Story = {}
 
-export const LightRedesigned = Template.bind({})
-LightRedesigned.args = {}
-LightRedesigned.decorators = [FeatureFlagsDecorator({ isAppRedesigned: true })]
+export const LightRedesigned: Story = {
+    decorators: [FeatureFlagsDecorator({ isAppRedesigned: true })]
+}

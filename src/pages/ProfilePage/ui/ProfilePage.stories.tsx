@@ -1,5 +1,4 @@
-import React from 'react'
-import { type ComponentMeta, type ComponentStory } from '@storybook/react'
+import { Meta, StoryObj } from '@storybook/react'
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator'
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator'
 import Avatar from '@/shared/assets/tests/rabbit.jpeg'
@@ -9,15 +8,13 @@ import { Theme } from '@/shared/const/theme'
 import { FeatureFlagsDecorator } from '@/shared/config/storybook/FeatureFlagsDecorator/FeatureFlagsDecorator'
 import ProfilePage from './ProfilePage'
 
-export default {
+const meta: Meta<typeof ProfilePage> = {
     title: 'pages/ProfilePage',
-    component: ProfilePage,
-    argTypes: {
-        backgroundColor: { control: 'color' }
-    }
-} as ComponentMeta<typeof ProfilePage>
+    component: ProfilePage
+}
 
-const Template: ComponentStory<typeof ProfilePage> = (args) => <ProfilePage {...args as typeof ProfilePage} />
+export default meta
+type Story = StoryObj<typeof ProfilePage>
 
 const form = {
     first: 'Pavel',
@@ -30,28 +27,29 @@ const form = {
     country: Country.Russia
 }
 
-export const Normal = Template.bind({})
-Normal.args = {}
-Normal.decorators = [StoreDecorator({
-    profile: {
-        form
-    }
-})]
-
-export const NormalRedesigned = Template.bind({})
-NormalRedesigned.args = {}
-NormalRedesigned.decorators = [
-    StoreDecorator({
+export const Normal: Story = {
+    decorators: [StoreDecorator({
         profile: {
             form
         }
-    }),
-    FeatureFlagsDecorator({ isAppRedesigned: true })]
+    })]
+}
 
-export const Dark = Template.bind({})
-Dark.args = {}
-Dark.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({
-    profile: {
-        form
-    }
-})]
+export const NormalRedesigned: Story = {
+    decorators: [
+        StoreDecorator({
+            profile: {
+                form
+            }
+        }),
+        FeatureFlagsDecorator({ isAppRedesigned: true })
+    ]
+}
+
+export const Dark: Story = {
+    decorators: [ThemeDecorator(Theme.DARK), StoreDecorator({
+        profile: {
+            form
+        }
+    })]
+}

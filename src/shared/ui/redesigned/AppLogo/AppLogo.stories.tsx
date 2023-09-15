@@ -1,16 +1,14 @@
-import React from 'react'
-import { type ComponentMeta, type ComponentStory } from '@storybook/react'
+import { Meta, StoryObj } from '@storybook/react'
 import { AppLogo } from './AppLogo'
 
-export default {
+const meta: Meta<typeof AppLogo> = {
     title: 'shared/redesigned/AppLogo',
-    component: AppLogo,
-    argTypes: {
-        backgroundColor: { control: 'color' }
-    }
-} as ComponentMeta<typeof AppLogo>
+    component: AppLogo
+}
 
-const Template: ComponentStory<typeof AppLogo> = (args) => <AppLogo {...args} />
+export default meta
+type Story = StoryObj<typeof AppLogo>
 
-export const Normal = Template.bind({})
-Normal.args = { size: 300 }
+export const Normal: Story = {
+    args: { size: 300 }
+}

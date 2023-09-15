@@ -1,17 +1,14 @@
-import React from 'react'
-import { type ComponentMeta, type ComponentStory } from '@storybook/react'
+import { Meta, StoryObj } from '@storybook/react'
 import { FeatureFlagsDecorator } from '@/shared/config/storybook/FeatureFlagsDecorator/FeatureFlagsDecorator'
 import { CommentList } from './CommentList'
 
-export default {
+const meta: Meta<typeof CommentList> = {
     title: 'entities/Comment/CommentList',
-    component: CommentList,
-    argTypes: {
-        backgroundColor: { control: 'color' }
-    }
-} as ComponentMeta<typeof CommentList>
+    component: CommentList
+}
 
-const Template: ComponentStory<typeof CommentList> = (args) => <CommentList {...args} />
+export default meta
+type Story = StoryObj<typeof CommentList>
 
 const normalArgs = {
     comments: [
@@ -28,22 +25,20 @@ const normalArgs = {
     ]
 }
 
-export const Normal = Template.bind({})
-Normal.args = normalArgs
-
-export const Loading = Template.bind({})
-Loading.args = {
-    comments: [],
-    isLoading: true
+export const Normal: Story = {
+    args: normalArgs
 }
 
-export const NormalRedesigned = Template.bind({})
-NormalRedesigned.args = normalArgs
-NormalRedesigned.decorators = [FeatureFlagsDecorator({ isAppRedesigned: true })]
-
-export const LoadingRedesigned = Template.bind({})
-LoadingRedesigned.args = {
-    comments: [],
-    isLoading: true
+export const Loading: Story = {
+    args: { comments: [], isLoading: true }
 }
-LoadingRedesigned.decorators = [FeatureFlagsDecorator({ isAppRedesigned: true })]
+
+export const NormalRedesigned: Story = {
+    args: normalArgs,
+    decorators: [FeatureFlagsDecorator({ isAppRedesigned: true })]
+}
+
+export const LoadingRedesigned: Story = {
+    args: { comments: [], isLoading: true },
+    decorators: [FeatureFlagsDecorator({ isAppRedesigned: true })]
+}
