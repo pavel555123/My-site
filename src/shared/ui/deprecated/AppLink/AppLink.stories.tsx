@@ -5,7 +5,10 @@ import { AppLink, AppLinkTheme } from './AppLink'
 
 const meta: Meta<typeof AppLink> = {
     title: 'shared/deprecated/AppLink',
-    component: AppLink
+    component: AppLink,
+    args: {
+        to: '/'
+    }
 }
 
 export default meta

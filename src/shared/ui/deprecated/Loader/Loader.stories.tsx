@@ -5,7 +5,10 @@ import { Loader } from './Loader'
 
 const meta: Meta<typeof Loader> = {
     title: 'shared/deprecated/Loader',
-    component: Loader
+    component: Loader,
+    decorators: [
+        Story => <div style={{ padding: 200 }}><Story/></div>
+    ]
 }
 
 export default meta
