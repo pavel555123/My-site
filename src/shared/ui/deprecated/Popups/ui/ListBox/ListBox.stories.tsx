@@ -3,7 +3,10 @@ import { ListBox } from './ListBox'
 
 const meta: Meta<typeof ListBox> = {
     title: 'shared/deprecated/Popups/ListBox',
-    component: ListBox
+    component: ListBox,
+    decorators: [
+        Story => <div style={{ padding: 200 }}><Story/></div>
+    ]
 }
 
 export default meta
