@@ -17,19 +17,13 @@
     "lint:scss:fix": "npx stylelint \"**/*.scss\" --fix",
     "test:unit": "jest --config ./config/jest/jest.config.ts",
     "test:e2e": "cypress open",
-    "test:ui": "npx loki test",
-    "test:ui:ok": "npx loki approve",
-    "test:ui:ci": "storybook build -c ./config/storybook && loki --requireReference --reactUri file:./storybook-static",
-    "test:ui:report": "npm run test:ui:json && npm run test:ui:html",
-    "test:ui:json": "node scripts/generate-visual-json-report.js",
-    "test:ui:html": "reg-cli --from .loki/report.json --report .loki/report.html",
     "storybook": "storybook dev -p 6006 -c ./config/storybook",
-    "build-storybook": "storybook build -c ./config/storybook",
+    "storybook:build": "storybook build -c ./config/storybook",
+    "chromatic": "npx chromatic --project-token=chpt_55604a7d6da674d --build-script-name storybook:build",
     "prepare": "husky install",
     "generate:slice": "node ./scripts/createSlice/index.js",
-    "postinstall": "node ./scripts/clear-cache.js",
     "remove-feature": "ts-node ./scripts/remove-feature.ts",
-    "chromatic": "npx chromatic --project-token=chpt_55604a7d6da674d"
+    "postinstall": "node ./scripts/clear-cache.js"
   },
   "lint-staged": {
     "**/*.{ts,tsx}": "eslint"
@@ -101,7 +95,6 @@
     "mini-css-extract-plugin": "^2.7.2",
     "react-refresh": "^0.14.0",
     "react-test-renderer": "^18.2.0",
-    "reg-cli": "^0.17.7",
     "sass": "^1.57.1",
     "sass-loader": "^13.2.0",
     "storybook": "^7.4.1",
